@@ -34,7 +34,7 @@ class MiniGamesScreen extends StatelessWidget {
       name: 'Trivia WORLD',
       description: 'Test your knowledge',
       imageUrl: '',
-      gameUrl: 'https://example.com/trivia-world',
+      gameUrl: 'https://ebeere-games.github.io/minigames/trivia-world/index.html',
       backgroundColor: const Color(0xFFFF6B6B),
     ),
     MiniGame(
@@ -42,7 +42,7 @@ class MiniGamesScreen extends StatelessWidget {
       name: 'Number PUZZLE',
       description: 'Solve number puzzles',
       imageUrl: '',
-      gameUrl: 'https://example.com/number-puzzle',
+      gameUrl: 'https://ebeere-games.github.io/minigames/number-puzzle/index.html',
       backgroundColor: const Color(0xFF4ECDC4),
     ),
     MiniGame(
@@ -50,7 +50,7 @@ class MiniGamesScreen extends StatelessWidget {
       name: 'Trivia WORLD II',
       description: 'More trivia fun',
       imageUrl: '',
-      gameUrl: 'https://example.com/trivia-world-2',
+      gameUrl: 'https://ebeere-games.github.io/minigames/trivia-world-2/index.html',
       backgroundColor: const Color(0xFF95E1D3),
     ),
     MiniGame(
@@ -58,7 +58,7 @@ class MiniGamesScreen extends StatelessWidget {
       name: 'Memory GAMES',
       description: 'Train your memory',
       imageUrl: '',
-      gameUrl: 'https://example.com/memory-game',
+      gameUrl: 'https://ebeere-games.github.io/minigames/memory-game/index.html',
       backgroundColor: const Color(0xFFFFD93D),
     ),
     MiniGame(
@@ -66,7 +66,7 @@ class MiniGamesScreen extends StatelessWidget {
       name: 'Tic Tac Toe GAME',
       description: 'Classic tic tac toe',
       imageUrl: '',
-      gameUrl: 'https://example.com/tic-tac-toe',
+      gameUrl: 'https://ebeere-games.github.io/minigames/tic-tac-toe/index.html',
       backgroundColor: const Color(0xFF6BCB77),
     ),
     MiniGame(
@@ -74,7 +74,7 @@ class MiniGamesScreen extends StatelessWidget {
       name: 'Maths GAMES',
       description: 'Improve math skills',
       imageUrl: '',
-      gameUrl: 'https://example.com/math-game',
+      gameUrl: 'https://ebeere-games.github.io/minigames/math-game/index.html',
       backgroundColor: const Color(0xFFFF6B9D),
     ),
     MiniGame(
@@ -82,7 +82,7 @@ class MiniGamesScreen extends StatelessWidget {
       name: '2048 GAME',
       description: 'Reach 2048!',
       imageUrl: '',
-      gameUrl: 'https://example.com/2048',
+      gameUrl: 'https://ebeere-games.github.io/minigames/2048/index.html',
       backgroundColor: const Color(0xFFFFA07A),
     ),
     MiniGame(
@@ -90,7 +90,7 @@ class MiniGamesScreen extends StatelessWidget {
       name: 'Focus GAME',
       description: 'Sharpen your focus',
       imageUrl: '',
-      gameUrl: 'https://example.com/focus-game',
+      gameUrl: 'https://ebeere-games.github.io/minigames/focus-game/index.html',
       backgroundColor: const Color(0xFF98D8C8),
     ),
   ];
