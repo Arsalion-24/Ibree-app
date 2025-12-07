@@ -13,6 +13,10 @@ import 'package:ebeere/features/quiz/cubits/quiz_category_cubit.dart';
 import 'package:ebeere/features/quiz/cubits/unlocked_level_cubit.dart';
 import 'package:ebeere/features/quiz/models/category.dart';
 import 'package:ebeere/features/quiz/models/quiz_type.dart';
+<<<<<<< HEAD
+=======
+import 'package:ebeere/ui/design_system/decorated_background.dart';
+>>>>>>> 8ca00ce (Complete UI Redesign - 100% Implementation)
 import 'package:ebeere/ui/screens/quiz/multi_match/screens/multi_match_quiz_screen.dart';
 import 'package:ebeere/ui/screens/quiz/widgets/subcategories_levels_chip.dart';
 import 'package:ebeere/ui/widgets/all.dart';
@@ -435,7 +439,14 @@ class _LevelsScreenState extends State<LevelsScreen>
 
     return Scaffold(
       appBar: const QAppBar(title: SizedBox.shrink(), roundedAppBar: false),
+<<<<<<< HEAD
       body: Stack(
+=======
+      body: DecoratedBackground(
+        shapesCount: 18,
+        shapesSeed: 666,
+        child: Stack(
+>>>>>>> 8ca00ce (Complete UI Redesign - 100% Implementation)
         children: [
           ///
           Padding(
@@ -448,6 +459,10 @@ class _LevelsScreenState extends State<LevelsScreen>
             child: BannerAdContainer(),
           ),
         ],
+<<<<<<< HEAD
+=======
+        ),
+>>>>>>> 8ca00ce (Complete UI Redesign - 100% Implementation)
       ),
     );
   }

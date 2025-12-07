@@ -20,6 +20,10 @@ import 'package:ebeere/utils/answer_encryption.dart';
 import 'package:ebeere/utils/extensions.dart';
 import 'package:ebeere/utils/ui_utils.dart';
 import 'package:wakelock_plus/wakelock_plus.dart';
+<<<<<<< HEAD
+=======
+import 'package:ebeere/ui/design_system/decorated_background.dart';
+>>>>>>> 8ca00ce (Complete UI Redesign - 100% Implementation)
 
 class ExamScreen extends StatefulWidget {
   const ExamScreen({super.key});
@@ -431,7 +435,14 @@ class _ExamScreenState extends State<ExamScreen> with WidgetsBindingObserver {
           ),
           onTapBackButton: onTapBackButton,
         ),
+<<<<<<< HEAD
         body: Stack(
+=======
+        body: DecoratedBackground(
+        shapesCount: 20,
+        shapesSeed: 701,
+        child: Stack(
+>>>>>>> 8ca00ce (Complete UI Redesign - 100% Implementation)
           children: [
             _buildQuestions(),
             Align(alignment: Alignment.bottomCenter, child: _buildBottomMenu()),
@@ -445,6 +456,10 @@ class _ExamScreenState extends State<ExamScreen> with WidgetsBindingObserver {
           ],
         ),
       ),
+<<<<<<< HEAD
+=======
+        ),
+>>>>>>> 8ca00ce (Complete UI Redesign - 100% Implementation)
     );
   }
 

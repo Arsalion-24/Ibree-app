@@ -5,6 +5,10 @@ import 'package:ebeere/core/core.dart';
 import 'package:ebeere/features/auth/cubits/auth_cubit.dart';
 import 'package:ebeere/features/quiz/models/quiz_type.dart';
 import 'package:ebeere/features/system_config/cubits/system_config_cubit.dart';
+<<<<<<< HEAD
+=======
+import 'package:ebeere/ui/design_system/decorated_background.dart';
+>>>>>>> 8ca00ce (Complete UI Redesign - 100% Implementation)
 import 'package:ebeere/ui/screens/home/widgets/quiz_grid_card.dart';
 import 'package:ebeere/ui/screens/quiz/category_screen.dart';
 import 'package:ebeere/ui/widgets/all.dart';
@@ -162,7 +166,14 @@ final class PlayZoneTabScreenState extends State<PlayZoneTabScreen>
         title: Text(context.tr('playZone')!),
         automaticallyImplyLeading: false,
       ),
+<<<<<<< HEAD
       body: SingleChildScrollView(
+=======
+      body: DecoratedBackground(
+        shapesCount: 20,
+        shapesSeed: 888,
+        child: SingleChildScrollView(
+>>>>>>> 8ca00ce (Complete UI Redesign - 100% Implementation)
         controller: _scrollController,
         padding: const EdgeInsets.all(20),
         child: GridView.count(
@@ -190,6 +201,10 @@ final class PlayZoneTabScreenState extends State<PlayZoneTabScreen>
             },
           ),
         ),
+<<<<<<< HEAD
+=======
+        ),
+>>>>>>> 8ca00ce (Complete UI Redesign - 100% Implementation)
       ),
     );
   }

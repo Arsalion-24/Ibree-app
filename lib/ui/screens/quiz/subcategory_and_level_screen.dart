@@ -27,6 +27,10 @@ import 'package:ebeere/ui/widgets/unlock_premium_category_dialog.dart';
 import 'package:ebeere/utils/extensions.dart';
 import 'package:ebeere/utils/ui_utils.dart';
 import 'package:google_fonts/google_fonts.dart';
+<<<<<<< HEAD
+=======
+import 'package:ebeere/ui/design_system/decorated_background.dart';
+>>>>>>> 8ca00ce (Complete UI Redesign - 100% Implementation)
 
 final class SubCategoryAndLevelScreenArgs extends RouteArgs {
   const SubCategoryAndLevelScreenArgs({
@@ -79,7 +83,14 @@ class _SubCategoryAndLevelScreen extends State<SubCategoryAndLevelScreen> {
         title: Text(widget.args.category.categoryName!),
         roundedAppBar: false,
       ),
+<<<<<<< HEAD
       body: Stack(
+=======
+      body: DecoratedBackground(
+        shapesCount: 20,
+        shapesSeed: 210,
+        child: Stack(
+>>>>>>> 8ca00ce (Complete UI Redesign - 100% Implementation)
         children: [
           Padding(
             padding: EdgeInsets.only(bottom: bannerAdLoaded ? 60 : 0),
@@ -566,6 +577,10 @@ class _AnimatedSubcategoryContainerState
           _buildLevelSection(),
         ],
       ),
+<<<<<<< HEAD
+=======
+        ),
+>>>>>>> 8ca00ce (Complete UI Redesign - 100% Implementation)
     );
   }
 }

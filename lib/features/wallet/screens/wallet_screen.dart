@@ -21,6 +21,10 @@ import 'package:ebeere/ui/widgets/all.dart';
 import 'package:ebeere/utils/extensions.dart';
 import 'package:ebeere/utils/ui_utils.dart';
 import 'package:intl/intl.dart';
+<<<<<<< HEAD
+=======
+import 'package:ebeere/ui/design_system/decorated_background.dart';
+>>>>>>> 8ca00ce (Complete UI Redesign - 100% Implementation)
 
 final class WalletScreen extends StatefulWidget {
   const WalletScreen({super.key});
@@ -688,12 +692,25 @@ class _WalletScreenState extends State<WalletScreen>
           ],
         ),
       ),
+<<<<<<< HEAD
       body: TabBarView(
         controller: tabController,
         children: [
           _buildRequestContainer(),
           _buildTransactionListContainer(),
         ],
+=======
+      body: DecoratedBackground(
+        shapesCount: 18,
+        shapesSeed: 321,
+        child: TabBarView(
+          controller: tabController,
+          children: [
+            _buildRequestContainer(),
+            _buildTransactionListContainer(),
+          ],
+        ),
+>>>>>>> 8ca00ce (Complete UI Redesign - 100% Implementation)
       ),
     );
   }

@@ -26,6 +26,10 @@ import 'package:lottie/lottie.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:screenshot/screenshot.dart';
 import 'package:share_plus/share_plus.dart';
+<<<<<<< HEAD
+=======
+import 'package:ebeere/ui/design_system/decorated_background.dart';
+>>>>>>> 8ca00ce (Complete UI Redesign - 100% Implementation)
 
 final class MultiMatchResultScreenArgs extends RouteArgs {
   const MultiMatchResultScreenArgs({
@@ -153,14 +157,26 @@ class _MultiMatchResultScreenState extends State<MultiMatchResultScreen> {
           title: Text(context.tr('multiMatchQuizResultLbl')!),
           onTapBackButton: _onBack,
         ),
+<<<<<<< HEAD
         body: SingleChildScrollView(
           child: Column(
+=======
+        body: DecoratedBackground(
+          shapesCount: 20,
+          shapesSeed: 777,
+          child: SingleChildScrollView(
+            child: Column(
+>>>>>>> 8ca00ce (Complete UI Redesign - 100% Implementation)
             children: [
               Center(child: _buildResultContainer(context)),
               const SizedBox(height: 20),
               _buildResultButtons(context),
             ],
           ),
+<<<<<<< HEAD
+=======
+          ),
+>>>>>>> 8ca00ce (Complete UI Redesign - 100% Implementation)
         ),
       ),
     );

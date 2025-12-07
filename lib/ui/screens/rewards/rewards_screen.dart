@@ -13,6 +13,10 @@ import 'package:ebeere/ui/widgets/custom_back_button.dart';
 import 'package:ebeere/ui/widgets/error_container.dart';
 import 'package:ebeere/utils/extensions.dart';
 import 'package:ebeere/utils/ui_utils.dart';
+<<<<<<< HEAD
+=======
+import 'package:ebeere/ui/design_system/decorated_background.dart';
+>>>>>>> 8ca00ce (Complete UI Redesign - 100% Implementation)
 
 class RewardsScreen extends StatefulWidget {
   const RewardsScreen({super.key});
@@ -90,9 +94,18 @@ class _RewardsScreenState extends State<RewardsScreen>
   }
 
   Widget _buildRewards() {
+<<<<<<< HEAD
     return BlocBuilder<BadgesCubit, BadgesState>(
       bloc: context.read<BadgesCubit>(),
       builder: (context, state) {
+=======
+    return DecoratedBackground(
+      shapesCount: 20,
+      shapesSeed: 543,
+      child: BlocBuilder<BadgesCubit, BadgesState>(
+        bloc: context.read<BadgesCubit>(),
+        builder: (context, state) {
+>>>>>>> 8ca00ce (Complete UI Redesign - 100% Implementation)
         if (state is BadgesFetchFailure) {
           return SliverToBoxAdapter(
             child: Center(
@@ -158,6 +171,10 @@ class _RewardsScreenState extends State<RewardsScreen>
 
         return const Center(child: CircularProgressContainer());
       },
+<<<<<<< HEAD
+=======
+      ),
+>>>>>>> 8ca00ce (Complete UI Redesign - 100% Implementation)
     );
   }
 

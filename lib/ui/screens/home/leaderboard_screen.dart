@@ -15,6 +15,10 @@ import 'package:ebeere/ui/widgets/custom_appbar.dart';
 import 'package:ebeere/ui/widgets/error_container.dart';
 import 'package:ebeere/utils/extensions.dart';
 import 'package:ebeere/utils/ui_utils.dart';
+<<<<<<< HEAD
+=======
+import 'package:ebeere/ui/design_system/decorated_background.dart';
+>>>>>>> 8ca00ce (Complete UI Redesign - 100% Implementation)
 
 class LeaderBoardScreen extends StatefulWidget {
   const LeaderBoardScreen({super.key});
@@ -139,6 +143,7 @@ class LeaderBoardScreenState extends State<LeaderBoardScreen>
           ],
         ),
       ),
+<<<<<<< HEAD
       body: TabBarView(
         controller: _tabController,
         physics: const ClampingScrollPhysics(),
@@ -147,6 +152,20 @@ class LeaderBoardScreenState extends State<LeaderBoardScreen>
           monthlyLeaderBoard(),
           dailyLeaderBoard(),
         ],
+=======
+      body: DecoratedBackground(
+        shapesCount: 18,
+        shapesSeed: 234,
+        child: TabBarView(
+          controller: _tabController,
+          physics: const ClampingScrollPhysics(),
+          children: [
+            allTimeLeaderBoard(),
+            monthlyLeaderBoard(),
+            dailyLeaderBoard(),
+          ],
+        ),
+>>>>>>> 8ca00ce (Complete UI Redesign - 100% Implementation)
       ),
     );
   }

@@ -18,6 +18,10 @@ import 'package:ebeere/ui/widgets/error_container.dart';
 import 'package:ebeere/utils/extensions.dart';
 import 'package:ebeere/utils/ui_utils.dart';
 import 'package:wakelock_plus/wakelock_plus.dart';
+<<<<<<< HEAD
+=======
+import 'package:ebeere/ui/design_system/decorated_background.dart';
+>>>>>>> 8ca00ce (Complete UI Redesign - 100% Implementation)
 
 class BattleRoomFindOpponentScreen extends StatefulWidget {
   const BattleRoomFindOpponentScreen({required this.categoryId, super.key});
@@ -695,6 +699,7 @@ class _BattleRoomFindOpponentScreenState
               }
             }
           },
+<<<<<<< HEAD
           child: Stack(
             children: [
               _buildFindingOpponentMapDetails(),
@@ -702,6 +707,19 @@ class _BattleRoomFindOpponentScreenState
               _buildFindingOpponentStatus(),
               _buildBackButton(),
             ],
+=======
+          child: DecoratedBackground(
+            shapesCount: 20,
+            shapesSeed: 789,
+            child: Stack(
+              children: [
+                _buildFindingOpponentMapDetails(),
+                _buildPlayersDetails(),
+                _buildFindingOpponentStatus(),
+                _buildBackButton(),
+              ],
+            ),
+>>>>>>> 8ca00ce (Complete UI Redesign - 100% Implementation)
           ),
         ),
       ),

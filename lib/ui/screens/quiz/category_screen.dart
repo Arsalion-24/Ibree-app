@@ -10,6 +10,10 @@ import 'package:ebeere/features/profile_management/cubits/user_details_cubit.dar
 import 'package:ebeere/features/quiz/cubits/quiz_category_cubit.dart';
 import 'package:ebeere/features/quiz/models/category.dart';
 import 'package:ebeere/features/quiz/models/quiz_type.dart';
+<<<<<<< HEAD
+=======
+import 'package:ebeere/ui/design_system/decorated_background.dart';
+>>>>>>> 8ca00ce (Complete UI Redesign - 100% Implementation)
 import 'package:ebeere/ui/screens/quiz/guess_the_word_quiz_screen.dart';
 import 'package:ebeere/ui/screens/quiz/levels_screen.dart';
 import 'package:ebeere/ui/screens/quiz/multi_match/screens/multi_match_quiz_screen.dart';
@@ -78,7 +82,14 @@ class _CategoryScreen extends State<CategoryScreen> {
         !context.read<UserDetailsCubit>().removeAds();
     return Scaffold(
       appBar: QAppBar(title: Text(getCategoryTitle(widget.args.quizType))),
+<<<<<<< HEAD
       body: Stack(
+=======
+      body: DecoratedBackground(
+        shapesCount: 20,
+        shapesSeed: 555,
+        child: Stack(
+>>>>>>> 8ca00ce (Complete UI Redesign - 100% Implementation)
         children: [
           Padding(
             padding: EdgeInsets.only(bottom: bannerAdLoaded ? 60 : 0),
@@ -89,6 +100,10 @@ class _CategoryScreen extends State<CategoryScreen> {
             child: BannerAdContainer(),
           ),
         ],
+<<<<<<< HEAD
+=======
+        ),
+>>>>>>> 8ca00ce (Complete UI Redesign - 100% Implementation)
       ),
     );
   }

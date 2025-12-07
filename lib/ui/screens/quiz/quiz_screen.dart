@@ -28,6 +28,10 @@ import 'package:ebeere/ui/widgets/text_circular_timer.dart';
 import 'package:ebeere/ui/widgets/watch_reward_ad_dialog.dart';
 import 'package:ebeere/utils/extensions.dart';
 import 'package:ebeere/utils/ui_utils.dart';
+<<<<<<< HEAD
+=======
+import 'package:ebeere/ui/design_system/decorated_background.dart';
+>>>>>>> 8ca00ce (Complete UI Redesign - 100% Implementation)
 
 enum LifelineStatus { unused, using, used }
 
@@ -873,7 +877,14 @@ class _QuizScreenState extends State<QuizScreen> with TickerProviderStateMixin {
                         ).colorScheme.onTertiary.withValues(alpha: 0.2),
                       ),
               ),
+<<<<<<< HEAD
               body: Stack(
+=======
+              body: DecoratedBackground(
+        shapesCount: 20,
+        shapesSeed: 200,
+        child: Stack(
+>>>>>>> 8ca00ce (Complete UI Redesign - 100% Implementation)
                 children: [
                   Align(
                     alignment: Alignment.topCenter,
@@ -913,6 +924,10 @@ class _QuizScreenState extends State<QuizScreen> with TickerProviderStateMixin {
           );
         },
       ),
+<<<<<<< HEAD
+=======
+        ),
+>>>>>>> 8ca00ce (Complete UI Redesign - 100% Implementation)
     );
   }
 }

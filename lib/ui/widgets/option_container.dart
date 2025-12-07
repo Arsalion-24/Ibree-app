@@ -137,6 +137,7 @@ class _OptionContainerState extends State<OptionContainer>
 
   Color get optionTextColor {
     final colorScheme = Theme.of(context).colorScheme;
+<<<<<<< HEAD
 
     if (widget.answerMode == AnswerMode.noAnswerCorrectness) {
       return isSubmittedAnswer ? colorScheme.surface : colorScheme.onTertiary;
@@ -154,14 +155,30 @@ class _OptionContainerState extends State<OptionContainer>
       }
     }
 
+=======
+    // Text always stays dark (readable on white background)
+>>>>>>> 8ca00ce (Complete UI Redesign - 100% Implementation)
     return colorScheme.onTertiary;
   }
 
   Color _buildOptionBackgroundColor() {
+<<<<<<< HEAD
     if (widget.answerMode == AnswerMode.noAnswerCorrectness) {
       return isSubmittedAnswer
           ? Theme.of(context).primaryColor
           : Theme.of(context).colorScheme.surface;
+=======
+    // Background always stays white/surface color
+    return Theme.of(context).colorScheme.surface;
+  }
+
+  /// Get left border color based on answer state
+  Color _getBorderColor() {
+    if (widget.answerMode == AnswerMode.noAnswerCorrectness) {
+      return isSubmittedAnswer
+          ? Theme.of(context).primaryColor
+          : kAnswerBorderGray;
+>>>>>>> 8ca00ce (Complete UI Redesign - 100% Implementation)
     }
 
     if (widget.hasSubmittedAnswerForCurrentQuestion()) {
@@ -171,17 +188,29 @@ class _OptionContainerState extends State<OptionContainer>
             ? kCorrectAnswerColor
             : isSubmittedAnswer
             ? kWrongAnswerColor
+<<<<<<< HEAD
             : Theme.of(context).colorScheme.surface;
+=======
+            : kAnswerBorderGray;
+>>>>>>> 8ca00ce (Complete UI Redesign - 100% Implementation)
       } else {
         return isSubmittedAnswer
             ? isCorrectAnswer
                   ? kCorrectAnswerColor
                   : kWrongAnswerColor
+<<<<<<< HEAD
             : Theme.of(context).colorScheme.surface;
       }
     }
 
     return Theme.of(context).colorScheme.surface;
+=======
+            : kAnswerBorderGray;
+      }
+    }
+
+    return kAnswerBorderGray;
+>>>>>>> 8ca00ce (Complete UI Redesign - 100% Implementation)
   }
 
   void _onTapOptionContainer() {
@@ -229,6 +258,7 @@ class _OptionContainerState extends State<OptionContainer>
             : widget.constraints.maxHeight * heightPercentage,
         width: optionWidth,
         alignment: Alignment.center,
+<<<<<<< HEAD
         child: ClipRRect(
           borderRadius: BorderRadius.circular(10),
           child: Stack(
@@ -247,6 +277,33 @@ class _OptionContainerState extends State<OptionContainer>
               ),
             ],
           ),
+=======
+        child: Container(
+          decoration: BoxDecoration(
+            color: _buildOptionBackgroundColor(),
+            borderRadius: BorderRadius.circular(12),
+            // LEFT-SIDE COLORED BORDER - KEY DESIGN ELEMENT
+            border: Border(
+              left: BorderSide(
+                color: _getBorderColor(),
+                width: 4,
+              ),
+            ),
+            boxShadow: [
+              BoxShadow(
+                color: Colors.black.withValues(alpha: 0.06),
+                blurRadius: 8,
+                offset: const Offset(0, 2),
+              ),
+            ],
+          ),
+          padding: EdgeInsets.symmetric(
+            horizontal: 16,
+            vertical: maxLines > 2 ? 10 : 12,
+          ),
+          alignment: Alignment.center,
+          child: RichText(text: textSpan, textAlign: TextAlign.center),
+>>>>>>> 8ca00ce (Complete UI Redesign - 100% Implementation)
         ),
       ),
     );

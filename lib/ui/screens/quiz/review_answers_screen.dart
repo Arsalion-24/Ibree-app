@@ -32,6 +32,10 @@ import 'package:ebeere/ui/widgets/custom_appbar.dart';
 import 'package:ebeere/utils/answer_encryption.dart';
 import 'package:ebeere/utils/extensions.dart';
 import 'package:ebeere/utils/ui_utils.dart';
+<<<<<<< HEAD
+=======
+import 'package:ebeere/ui/design_system/decorated_background.dart';
+>>>>>>> 8ca00ce (Complete UI Redesign - 100% Implementation)
 
 final class ReviewAnswersScreenArgs extends RouteArgs {
   const ReviewAnswersScreenArgs({
@@ -843,7 +847,14 @@ class _ReviewAnswersScreenState extends State<ReviewAnswersScreen>
           ],
         ],
       ),
+<<<<<<< HEAD
       body: Stack(
+=======
+      body: DecoratedBackground(
+        shapesCount: 20,
+        shapesSeed: 203,
+        child: Stack(
+>>>>>>> 8ca00ce (Complete UI Redesign - 100% Implementation)
         children: [
           Align(alignment: Alignment.topCenter, child: _buildQuestions()),
           Align(alignment: Alignment.bottomCenter, child: _buildBottomMenu()),
@@ -993,6 +1004,10 @@ class LaTeXQuestionContainer extends StatelessWidget {
           ],
         ),
       ),
+<<<<<<< HEAD
+=======
+        ),
+>>>>>>> 8ca00ce (Complete UI Redesign - 100% Implementation)
     );
   }
 }

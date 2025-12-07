@@ -32,6 +32,10 @@ import 'package:ebeere/utils/answer_encryption.dart';
 import 'package:ebeere/utils/extensions.dart';
 import 'package:ebeere/utils/internet_connectivity.dart';
 import 'package:wakelock_plus/wakelock_plus.dart';
+<<<<<<< HEAD
+=======
+import 'package:ebeere/ui/design_system/decorated_background.dart';
+>>>>>>> 8ca00ce (Complete UI Redesign - 100% Implementation)
 
 class MultiUserBattleRoomQuizScreen extends StatefulWidget {
   const MultiUserBattleRoomQuizScreen({super.key});
@@ -973,8 +977,16 @@ class _MultiUserBattleRoomQuizScreenState
           },
         ),
         backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+<<<<<<< HEAD
         body: MultiBlocListener(
           listeners: [
+=======
+        body: DecoratedBackground(
+          shapesCount: 23,
+          shapesSeed: 999,
+          child: MultiBlocListener(
+            listeners: [
+>>>>>>> 8ca00ce (Complete UI Redesign - 100% Implementation)
             //update ui and do other callback based on changes in MultiUserBattleRoomCubit
             BlocListener<MultiUserBattleRoomCubit, MultiUserBattleRoomState>(
               bloc: battleRoomCubit,
@@ -1183,6 +1195,10 @@ class _MultiUserBattleRoomQuizScreenState
               _buildUserLeftTheGame(),
             ],
           ),
+<<<<<<< HEAD
+=======
+          ),
+>>>>>>> 8ca00ce (Complete UI Redesign - 100% Implementation)
         ),
       ),
     );

@@ -22,6 +22,10 @@ import 'package:ebeere/utils/app_tracking_transparency_helper.dart';
 import 'package:ebeere/utils/gdpr_helper.dart';
 import 'package:ironsource_mediation/ironsource_mediation.dart';
 import 'package:unity_ads_plugin/unity_ads_plugin.dart';
+<<<<<<< HEAD
+=======
+import 'package:ebeere/ui/design_system/decorated_background.dart';
+>>>>>>> 8ca00ce (Complete UI Redesign - 100% Implementation)
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -290,8 +294,16 @@ class _SplashScreenState extends State<SplashScreen>
           ),
           child: Scaffold(
             backgroundColor: context.primaryColor,
+<<<<<<< HEAD
             body: SizedBox.expand(
               child: Stack(
+=======
+            body: DecoratedBackground(
+              shapesCount: 18,
+              shapesSeed: 100,
+              child: SizedBox.expand(
+                child: Stack(
+>>>>>>> 8ca00ce (Complete UI Redesign - 100% Implementation)
                 children: [
                   /// App Logo
                   Align(
@@ -324,6 +336,10 @@ class _SplashScreenState extends State<SplashScreen>
                   ],
                 ],
               ),
+<<<<<<< HEAD
+=======
+              ),
+>>>>>>> 8ca00ce (Complete UI Redesign - 100% Implementation)
             ),
           ),
         );

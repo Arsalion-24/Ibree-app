@@ -14,6 +14,10 @@ import 'package:ebeere/ui/widgets/all.dart';
 import 'package:ebeere/ui/widgets/badges_icon_container.dart';
 import 'package:ebeere/utils/extensions.dart';
 import 'package:ebeere/utils/ui_utils.dart';
+<<<<<<< HEAD
+=======
+import 'package:ebeere/ui/design_system/decorated_background.dart';
+>>>>>>> 8ca00ce (Complete UI Redesign - 100% Implementation)
 
 class StatisticsScreen extends StatefulWidget {
   const StatisticsScreen({super.key});
@@ -528,8 +532,16 @@ class _StatisticsScreenState extends State<StatisticsScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: QAppBar(title: Text(context.tr(statisticsLabelKey)!)),
+<<<<<<< HEAD
       body: BlocConsumer<StatisticCubit, StatisticState>(
         listener: (context, state) {
+=======
+      body: DecoratedBackground(
+        shapesCount: 17,
+        shapesSeed: 678,
+        child: BlocConsumer<StatisticCubit, StatisticState>(
+          listener: (context, state) {
+>>>>>>> 8ca00ce (Complete UI Redesign - 100% Implementation)
           if (state is StatisticFetchFailure) {
             if (state.errorMessageCode == errorCodeUnauthorizedAccess) {
               showAlreadyLoggedInDialog(context);
@@ -544,6 +556,10 @@ class _StatisticsScreenState extends State<StatisticsScreen> {
             showQuestionAndBattleStatistics: state is StatisticFetchSuccess,
           );
         },
+<<<<<<< HEAD
+=======
+        ),
+>>>>>>> 8ca00ce (Complete UI Redesign - 100% Implementation)
       ),
     );
   }

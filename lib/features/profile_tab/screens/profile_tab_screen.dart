@@ -7,6 +7,10 @@ import 'package:ebeere/features/auth/models/auth_providers_enum.dart';
 import 'package:ebeere/features/profile_management/cubits/user_details_cubit.dart';
 import 'package:ebeere/features/settings/settings_cubit.dart';
 import 'package:ebeere/features/system_config/cubits/system_config_cubit.dart';
+<<<<<<< HEAD
+=======
+import 'package:ebeere/ui/design_system/decorated_background.dart';
+>>>>>>> 8ca00ce (Complete UI Redesign - 100% Implementation)
 import 'package:ebeere/ui/screens/app_settings_screen.dart';
 import 'package:ebeere/ui/screens/menu/widgets/delete_account_dialog.dart';
 import 'package:ebeere/ui/screens/menu/widgets/language_selector_sheet.dart';
@@ -206,11 +210,23 @@ final class ProfileTabScreenState extends State<ProfileTabScreen>
     super.build(context);
 
     return Scaffold(
+<<<<<<< HEAD
       body: Column(
         children: [
           _buildProfileHeader(),
           Expanded(child: _buildMenuSection()),
         ],
+=======
+      body: DecoratedBackground(
+        shapesCount: 20,
+        shapesSeed: 222,
+        child: Column(
+          children: [
+            _buildProfileHeader(),
+            Expanded(child: _buildMenuSection()),
+          ],
+        ),
+>>>>>>> 8ca00ce (Complete UI Redesign - 100% Implementation)
       ),
     );
   }

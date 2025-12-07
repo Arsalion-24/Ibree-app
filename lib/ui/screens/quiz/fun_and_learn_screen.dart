@@ -12,6 +12,10 @@ import 'package:ebeere/ui/widgets/all.dart';
 import 'package:ebeere/utils/extensions.dart';
 import 'package:ebeere/utils/ui_utils.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
+<<<<<<< HEAD
+=======
+import 'package:ebeere/ui/design_system/decorated_background.dart';
+>>>>>>> 8ca00ce (Complete UI Redesign - 100% Implementation)
 
 final class FunAndLearnScreenArgs extends RouteArgs {
   const FunAndLearnScreenArgs({
@@ -198,7 +202,14 @@ class _FunAndLearnScreen extends State<FunAndLearnScreen> {
             roundedAppBar: false,
             title: Text(_comprehension.title),
           ),
+<<<<<<< HEAD
           body: Stack(
+=======
+          body: DecoratedBackground(
+        shapesCount: 20,
+        shapesSeed: 208,
+        child: Stack(
+>>>>>>> 8ca00ce (Complete UI Redesign - 100% Implementation)
             children: [
               Align(
                 alignment: Alignment.topCenter,
@@ -210,6 +221,10 @@ class _FunAndLearnScreen extends State<FunAndLearnScreen> {
               ),
             ],
           ),
+<<<<<<< HEAD
+=======
+        ),
+>>>>>>> 8ca00ce (Complete UI Redesign - 100% Implementation)
         );
       },
     );

@@ -17,6 +17,10 @@ import 'package:ebeere/ui/widgets/custom_back_button.dart';
 import 'package:ebeere/ui/widgets/error_container.dart';
 import 'package:ebeere/utils/extensions.dart';
 import 'package:ebeere/utils/ui_utils.dart';
+<<<<<<< HEAD
+=======
+import 'package:ebeere/ui/design_system/decorated_background.dart';
+>>>>>>> 8ca00ce (Complete UI Redesign - 100% Implementation)
 
 /// Contest Type
 const int _past = 0;
@@ -99,9 +103,18 @@ class _ContestScreen extends State<ContestScreen>
                 ),
               ),
             ),
+<<<<<<< HEAD
             body: BlocConsumer<ContestCubit, ContestState>(
               bloc: context.read<ContestCubit>(),
               listener: (context, state) {
+=======
+            body: DecoratedBackground(
+              shapesCount: 20,
+              shapesSeed: 444,
+              child: BlocConsumer<ContestCubit, ContestState>(
+                bloc: context.read<ContestCubit>(),
+                listener: (context, state) {
+>>>>>>> 8ca00ce (Complete UI Redesign - 100% Implementation)
                 if (state is ContestFailure) {
                   if (state.errorMessage == errorCodeUnauthorizedAccess) {
                     showAlreadyLoggedInDialog(context);
@@ -134,6 +147,10 @@ class _ContestScreen extends State<ContestScreen>
                   ],
                 );
               },
+<<<<<<< HEAD
+=======
+              ),
+>>>>>>> 8ca00ce (Complete UI Redesign - 100% Implementation)
             ),
           );
         },

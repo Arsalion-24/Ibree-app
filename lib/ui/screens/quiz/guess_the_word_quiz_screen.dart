@@ -22,6 +22,10 @@ import 'package:ebeere/ui/widgets/questions_container.dart';
 import 'package:ebeere/ui/widgets/text_circular_timer.dart';
 import 'package:ebeere/utils/extensions.dart';
 import 'package:ebeere/utils/ui_utils.dart';
+<<<<<<< HEAD
+=======
+import 'package:ebeere/ui/design_system/decorated_background.dart';
+>>>>>>> 8ca00ce (Complete UI Redesign - 100% Implementation)
 
 final class GuessTheWordQuizScreenArgs extends RouteArgs {
   const GuessTheWordQuizScreenArgs({
@@ -435,7 +439,14 @@ class _GuessTheWordQuizScreenState extends State<GuessTheWordQuizScreen>
               ).colorScheme.onTertiary.withValues(alpha: 0.2),
             ),
           ),
+<<<<<<< HEAD
           body: Stack(
+=======
+          body: DecoratedBackground(
+        shapesCount: 20,
+        shapesSeed: 204,
+        child: Stack(
+>>>>>>> 8ca00ce (Complete UI Redesign - 100% Implementation)
             children: [
               _buildQuestions(guessTheWordQuizCubit),
               _buildSubmitButton(guessTheWordQuizCubit),
@@ -443,6 +454,10 @@ class _GuessTheWordQuizScreenState extends State<GuessTheWordQuizScreen>
           ),
         ),
       ),
+<<<<<<< HEAD
+=======
+        ),
+>>>>>>> 8ca00ce (Complete UI Redesign - 100% Implementation)
     );
   }
 }

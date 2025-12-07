@@ -6,6 +6,10 @@ import 'package:ebeere/features/auth/cubits/auth_cubit.dart';
 import 'package:ebeere/features/quiz/cubits/quiz_category_cubit.dart';
 import 'package:ebeere/features/quiz/models/category.dart';
 import 'package:ebeere/features/quiz/models/quiz_type.dart';
+<<<<<<< HEAD
+=======
+import 'package:ebeere/ui/design_system/decorated_background.dart';
+>>>>>>> 8ca00ce (Complete UI Redesign - 100% Implementation)
 import 'package:ebeere/ui/screens/quiz/levels_screen.dart';
 import 'package:ebeere/ui/screens/quiz/subcategory_and_level_screen.dart';
 import 'package:ebeere/ui/widgets/already_logged_in_dialog.dart';
@@ -146,7 +150,15 @@ final class QuizZoneTabScreenState extends State<QuizZoneTabScreen>
           title: Text(context.tr('quizZone')!),
           automaticallyImplyLeading: false,
         ),
+<<<<<<< HEAD
         body: _buildCategoriesListView(),
+=======
+        body: DecoratedBackground(
+          shapesCount: 20,
+          shapesSeed: 999,
+          child: _buildCategoriesListView(),
+        ),
+>>>>>>> 8ca00ce (Complete UI Redesign - 100% Implementation)
       ),
     );
   }

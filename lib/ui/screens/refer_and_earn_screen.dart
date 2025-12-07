@@ -13,6 +13,10 @@ import 'package:ebeere/ui/widgets/custom_back_button.dart';
 import 'package:ebeere/ui/widgets/custom_rounded_button.dart';
 import 'package:ebeere/utils/extensions.dart';
 import 'package:ebeere/utils/ui_utils.dart';
+<<<<<<< HEAD
+=======
+import 'package:ebeere/ui/design_system/decorated_background.dart';
+>>>>>>> 8ca00ce (Complete UI Redesign - 100% Implementation)
 
 class ReferAndEarnScreen extends StatelessWidget {
   const ReferAndEarnScreen({super.key});
@@ -40,7 +44,14 @@ class ReferAndEarnScreen extends StatelessWidget {
         backgroundColor: context.primaryColor,
         leading: QBackButton(color: context.surfaceColor),
       ),
+<<<<<<< HEAD
       body: SingleChildScrollView(
+=======
+      body: DecoratedBackground(
+        shapesCount: 20,
+        shapesSeed: 502,
+        child: SingleChildScrollView(
+>>>>>>> 8ca00ce (Complete UI Redesign - 100% Implementation)
         child: SizedBox(
           width: size.width,
           height: size.height * .8,
@@ -404,5 +415,9 @@ class ReferAndEarnScreen extends StatelessWidget {
         ),
       ],
     );
+<<<<<<< HEAD
+=======
+        ),
+>>>>>>> 8ca00ce (Complete UI Redesign - 100% Implementation)
   }
 }

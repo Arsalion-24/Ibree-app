@@ -16,6 +16,10 @@ import 'package:ebeere/ui/widgets/error_container.dart';
 import 'package:ebeere/utils/datetime_utils.dart';
 import 'package:ebeere/utils/extensions.dart';
 import 'package:ebeere/utils/ui_utils.dart';
+<<<<<<< HEAD
+=======
+import 'package:ebeere/ui/design_system/decorated_background.dart';
+>>>>>>> 8ca00ce (Complete UI Redesign - 100% Implementation)
 
 final class CoinHistoryScreen extends StatefulWidget {
   const CoinHistoryScreen({super.key});
@@ -176,7 +180,14 @@ final class _CoinHistoryScreenState extends State<CoinHistoryScreen> {
 
     return Scaffold(
       appBar: QAppBar(title: Text(context.tr(coinHistoryKey)!)),
+<<<<<<< HEAD
       body: Stack(
+=======
+      body: DecoratedBackground(
+        shapesCount: 20,
+        shapesSeed: 403,
+        child: Stack(
+>>>>>>> 8ca00ce (Complete UI Redesign - 100% Implementation)
         children: [
           Padding(
             padding: EdgeInsets.only(bottom: showBannerAd ? 60 : 0),
@@ -341,6 +352,10 @@ class _CoinBadge extends StatelessWidget {
           letterSpacing: 0.5,
         ),
       ),
+<<<<<<< HEAD
+=======
+        ),
+>>>>>>> 8ca00ce (Complete UI Redesign - 100% Implementation)
     );
   }
 }

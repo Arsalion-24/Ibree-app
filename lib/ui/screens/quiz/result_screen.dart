@@ -43,6 +43,10 @@ import 'package:lottie/lottie.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:screenshot/screenshot.dart';
 import 'package:share_plus/share_plus.dart';
+<<<<<<< HEAD
+=======
+import 'package:ebeere/ui/design_system/decorated_background.dart';
+>>>>>>> 8ca00ce (Complete UI Redesign - 100% Implementation)
 
 class ResultScreen extends StatefulWidget {
   const ResultScreen({
@@ -1471,7 +1475,14 @@ class _ResultScreenState extends State<ResultScreen> {
               Navigator.pop(context);
             },
           ),
+<<<<<<< HEAD
           body: SingleChildScrollView(
+=======
+          body: DecoratedBackground(
+        shapesCount: 20,
+        shapesSeed: 202,
+        child: SingleChildScrollView(
+>>>>>>> 8ca00ce (Complete UI Redesign - 100% Implementation)
             child: Column(
               children: [
                 Center(child: _buildResultContainer(context)),
@@ -1482,6 +1493,10 @@ class _ResultScreenState extends State<ResultScreen> {
           ),
         ),
       ),
+<<<<<<< HEAD
+=======
+        ),
+>>>>>>> 8ca00ce (Complete UI Redesign - 100% Implementation)
     );
   }
 }

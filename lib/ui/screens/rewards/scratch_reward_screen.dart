@@ -8,6 +8,10 @@ import 'package:ebeere/features/profile_management/cubits/user_details_cubit.dar
 import 'package:ebeere/ui/screens/rewards/widgets/unlocked_reward_content.dart';
 import 'package:ebeere/utils/extensions.dart';
 import 'package:scratcher/widgets.dart';
+<<<<<<< HEAD
+=======
+import 'package:ebeere/ui/design_system/decorated_background.dart';
+>>>>>>> 8ca00ce (Complete UI Redesign - 100% Implementation)
 
 class ScratchRewardScreen extends StatefulWidget {
   const ScratchRewardScreen({required this.reward, super.key});
@@ -94,7 +98,14 @@ class _ScratchRewardScreenState extends State<ScratchRewardScreen> {
           ),
         ),
       ),
+<<<<<<< HEAD
       body: Stack(
+=======
+      body: DecoratedBackground(
+        shapesCount: 20,
+        shapesSeed: 401,
+        child: Stack(
+>>>>>>> 8ca00ce (Complete UI Redesign - 100% Implementation)
         children: [
           Align(
             child: Hero(
@@ -154,6 +165,10 @@ class _ScratchRewardScreenState extends State<ScratchRewardScreen> {
             const SizedBox.shrink(),
         ],
       ),
+<<<<<<< HEAD
+=======
+        ),
+>>>>>>> 8ca00ce (Complete UI Redesign - 100% Implementation)
     );
   }
 }

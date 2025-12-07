@@ -5,6 +5,11 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:ebeere/commons/commons.dart';
 import 'package:ebeere/core/core.dart';
 import 'package:ebeere/features/settings/settings_cubit.dart';
+<<<<<<< HEAD
+=======
+import 'package:ebeere/ui/design_system/decorated_background.dart';
+import 'package:ebeere/ui/design_system/pill_button.dart';
+>>>>>>> 8ca00ce (Complete UI Redesign - 100% Implementation)
 import 'package:ebeere/utils/extensions.dart';
 import 'package:ebeere/utils/ui_utils.dart';
 
@@ -197,6 +202,7 @@ class _GettingStartedScreenState extends State<IntroSliderScreen>
               width: context.width,
               color: Theme.of(context).primaryColor,
             ),
+<<<<<<< HEAD
             Container(
               height: context.height * 0.75,
               width: context.width,
@@ -207,6 +213,21 @@ class _GettingStartedScreenState extends State<IntroSliderScreen>
                 ),
               ),
               child: _buildIntroSlider(),
+=======
+            DecoratedBackground(
+              shapesCount: 15,
+              child: Container(
+                height: context.height * 0.75,
+                width: context.width,
+                decoration: BoxDecoration(
+                  color: Theme.of(context).scaffoldBackgroundColor.withValues(alpha: 0.95),
+                  borderRadius: const BorderRadius.vertical(
+                    bottom: Radius.circular(20),
+                  ),
+                ),
+                child: _buildIntroSlider(),
+              ),
+>>>>>>> 8ca00ce (Complete UI Redesign - 100% Implementation)
             ),
             Container(
               width: context.width,
@@ -245,6 +266,7 @@ class _GettingStartedScreenState extends State<IntroSliderScreen>
             ),
             Align(
               alignment: Alignment.bottomCenter,
+<<<<<<< HEAD
               child: GestureDetector(
                 onTap: () {
                   context.read<SettingsCubit>().changeShowIntroSlider();
@@ -268,6 +290,20 @@ class _GettingStartedScreenState extends State<IntroSliderScreen>
                       ),
                     ),
                   ),
+=======
+              child: Container(
+                margin: EdgeInsets.only(bottom: context.height * 0.10),
+                padding: EdgeInsets.symmetric(horizontal: context.width * 0.15),
+                child: PillButton(
+                  text: context.tr('getStarted')!,
+                  style: PillButtonStyle.white,
+                  onPressed: () {
+                    context.read<SettingsCubit>().changeShowIntroSlider();
+                    context.pushReplacementNamed(Routes.home);
+                  },
+                  height: 50,
+                  fontSize: 22,
+>>>>>>> 8ca00ce (Complete UI Redesign - 100% Implementation)
                 ),
               ),
             ),

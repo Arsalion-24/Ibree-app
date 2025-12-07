@@ -21,6 +21,10 @@ import 'package:ebeere/ui/widgets/error_container.dart';
 import 'package:ebeere/utils/datetime_utils.dart';
 import 'package:ebeere/utils/extensions.dart';
 import 'package:ebeere/utils/ui_utils.dart';
+<<<<<<< HEAD
+=======
+import 'package:ebeere/ui/design_system/decorated_background.dart';
+>>>>>>> 8ca00ce (Complete UI Redesign - 100% Implementation)
 
 class ExamsScreen extends StatefulWidget {
   const ExamsScreen({super.key});
@@ -446,7 +450,14 @@ class _ExamsScreenState extends State<ExamsScreen> {
             ],
           ),
         ),
+<<<<<<< HEAD
         body: Stack(
+=======
+        body: DecoratedBackground(
+        shapesCount: 20,
+        shapesSeed: 700,
+        child: Stack(
+>>>>>>> 8ca00ce (Complete UI Redesign - 100% Implementation)
           children: [
             TabBarView(children: [_buildTodayExams(), _buildExamResults()]),
             if (bannerAdLoaded)
@@ -457,6 +468,10 @@ class _ExamsScreenState extends State<ExamsScreen> {
           ],
         ),
       ),
+<<<<<<< HEAD
+=======
+        ),
+>>>>>>> 8ca00ce (Complete UI Redesign - 100% Implementation)
     );
   }
 }

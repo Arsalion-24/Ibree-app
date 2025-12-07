@@ -19,6 +19,10 @@ import 'package:ebeere/ui/widgets/custom_rounded_button.dart';
 import 'package:ebeere/ui/widgets/watch_reward_ad_dialog.dart';
 import 'package:ebeere/utils/extensions.dart';
 import 'package:ebeere/utils/ui_utils.dart';
+<<<<<<< HEAD
+=======
+import 'package:ebeere/ui/design_system/decorated_background.dart';
+>>>>>>> 8ca00ce (Complete UI Redesign - 100% Implementation)
 
 class RandomBattleScreen extends StatefulWidget {
   const RandomBattleScreen({super.key});
@@ -230,7 +234,14 @@ class _RandomBattleScreenState extends State<RandomBattleScreen> {
         }
       },
       child: Scaffold(
+<<<<<<< HEAD
         body: SingleChildScrollView(
+=======
+        body: DecoratedBackground(
+        shapesCount: 20,
+        shapesSeed: 103,
+        child: SingleChildScrollView(
+>>>>>>> 8ca00ce (Complete UI Redesign - 100% Implementation)
           child: SizedBox(
             width: context.width,
             height: context.height,
@@ -571,5 +582,9 @@ class _RandomBattleScreenState extends State<RandomBattleScreen> {
         ),
       ],
     );
+<<<<<<< HEAD
+=======
+        ),
+>>>>>>> 8ca00ce (Complete UI Redesign - 100% Implementation)
   }
 }

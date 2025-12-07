@@ -5,6 +5,10 @@ import 'package:ebeere/core/core.dart';
 import 'package:ebeere/ui/widgets/all.dart';
 import 'package:ebeere/utils/extensions.dart';
 import 'package:ebeere/utils/ui_utils.dart';
+<<<<<<< HEAD
+=======
+import 'package:ebeere/ui/design_system/decorated_background.dart';
+>>>>>>> 8ca00ce (Complete UI Redesign - 100% Implementation)
 
 class InitialLanguageSelectionScreen extends StatefulWidget {
   const InitialLanguageSelectionScreen({super.key});
@@ -32,12 +36,24 @@ class _InitialLanguageSelectionScreenState
             title: Text(context.tr('selectLanguage')!),
             usePrimaryColor: true,
           ),
+<<<<<<< HEAD
           body: Padding(
             padding: EdgeInsets.symmetric(
               vertical: context.height * UiUtils.vtMarginPct,
               horizontal: context.width * UiUtils.hzMarginPct,
             ),
             child: RadioGroup<String>(
+=======
+          body: DecoratedBackground(
+            shapesCount: 16,
+            shapesSeed: 987,
+            child: Padding(
+              padding: EdgeInsets.symmetric(
+                vertical: context.height * UiUtils.vtMarginPct,
+                horizontal: context.width * UiUtils.hzMarginPct,
+              ),
+              child: RadioGroup<String>(
+>>>>>>> 8ca00ce (Complete UI Redesign - 100% Implementation)
               groupValue: currLang.name,
               onChanged: (name) async {
                 if (name == null) return;
@@ -88,6 +104,10 @@ class _InitialLanguageSelectionScreenState
                 itemCount: state.systemLanguages.length,
               ),
             ),
+<<<<<<< HEAD
+=======
+            ),
+>>>>>>> 8ca00ce (Complete UI Redesign - 100% Implementation)
           ),
           floatingActionButton: _confirmAndContinueButton,
         );

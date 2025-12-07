@@ -25,6 +25,10 @@ import 'package:ebeere/utils/ui_utils.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
 import 'package:wakelock_plus/wakelock_plus.dart';
+<<<<<<< HEAD
+=======
+import 'package:ebeere/ui/design_system/decorated_background.dart';
+>>>>>>> 8ca00ce (Complete UI Redesign - 100% Implementation)
 
 class CreateOrJoinRoomScreen extends StatefulWidget {
   const CreateOrJoinRoomScreen({
@@ -1991,10 +1995,20 @@ class _CreateOrJoinRoomScreenState extends State<CreateOrJoinRoomScreen> {
                         height: size.height * 0.4,
                         padding: const EdgeInsets.only(left: 10, right: 10),
                         color: Theme.of(context).colorScheme.surface,
+<<<<<<< HEAD
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           crossAxisAlignment: CrossAxisAlignment.stretch,
                           children: [
+=======
+                        child: DecoratedBackground(
+                          shapesCount: 18,
+                          shapesSeed: 567,
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.stretch,
+                            children: [
+>>>>>>> 8ca00ce (Complete UI Redesign - 100% Implementation)
                             /// Create Room Btn
                             CustomRoundedButton(
                               widthPercentage: context.width,
@@ -2019,6 +2033,10 @@ class _CreateOrJoinRoomScreenState extends State<CreateOrJoinRoomScreen> {
                             ),
                           ],
                         ),
+<<<<<<< HEAD
+=======
+                        ),
+>>>>>>> 8ca00ce (Complete UI Redesign - 100% Implementation)
                       ),
                     ),
                   ),

@@ -25,6 +25,10 @@ import 'package:ebeere/ui/widgets/error_container.dart';
 import 'package:ebeere/ui/widgets/questions_container.dart';
 import 'package:ebeere/utils/extensions.dart';
 import 'package:ebeere/utils/ui_utils.dart';
+<<<<<<< HEAD
+=======
+import 'package:ebeere/ui/design_system/decorated_background.dart';
+>>>>>>> 8ca00ce (Complete UI Redesign - 100% Implementation)
 
 class BookmarkQuizScreen extends StatefulWidget {
   const BookmarkQuizScreen({required this.quizType, super.key});
@@ -530,7 +534,14 @@ class _BookmarkQuizScreenState extends State<BookmarkQuizScreen>
       },
       child: Scaffold(
         appBar: const QAppBar(roundedAppBar: false, title: SizedBox()),
+<<<<<<< HEAD
         body: Stack(
+=======
+        body: DecoratedBackground(
+        shapesCount: 20,
+        shapesSeed: 207,
+        child: Stack(
+>>>>>>> 8ca00ce (Complete UI Redesign - 100% Implementation)
           children: [
             AnimatedSwitcher(
               duration: const Duration(milliseconds: 500),
@@ -588,6 +599,10 @@ class _BookmarkQuizScreenState extends State<BookmarkQuizScreen>
           ],
         ),
       ),
+<<<<<<< HEAD
+=======
+        ),
+>>>>>>> 8ca00ce (Complete UI Redesign - 100% Implementation)
     );
   }
 }

@@ -30,6 +30,10 @@ import 'package:ebeere/utils/extensions.dart';
 import 'package:ebeere/utils/ui_utils.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:just_audio/just_audio.dart';
+<<<<<<< HEAD
+=======
+import 'package:ebeere/ui/design_system/decorated_background.dart';
+>>>>>>> 8ca00ce (Complete UI Redesign - 100% Implementation)
 
 final class MultiMatchQuizArgs extends RouteArgs {
   const MultiMatchQuizArgs({
@@ -257,9 +261,18 @@ class _MultiMatchQuizScreenState extends State<MultiMatchQuizScreen>
                   ).colorScheme.onTertiary.withValues(alpha: 0.2),
                 ),
               ),
+<<<<<<< HEAD
               body: SizedBox(
                 width: double.maxFinite,
                 child: Stack(
+=======
+              body: DecoratedBackground(
+                shapesCount: 22,
+                shapesSeed: 666,
+                child: SizedBox(
+                  width: double.maxFinite,
+                  child: Stack(
+>>>>>>> 8ca00ce (Complete UI Redesign - 100% Implementation)
                   alignment: Alignment.topCenter,
                   children: [
                     MultiMatchQuestionsView(
@@ -282,6 +295,10 @@ class _MultiMatchQuizScreenState extends State<MultiMatchQuizScreen>
                     _buildCheckAnswersButton(),
                   ],
                 ),
+<<<<<<< HEAD
+=======
+                ),
+>>>>>>> 8ca00ce (Complete UI Redesign - 100% Implementation)
               ),
             ),
           );

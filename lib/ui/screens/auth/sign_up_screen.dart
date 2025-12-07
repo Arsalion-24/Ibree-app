@@ -6,6 +6,10 @@ import 'package:ebeere/core/core.dart';
 import 'package:ebeere/features/auth/auth_repository.dart';
 import 'package:ebeere/features/auth/cubits/sign_up_cubit.dart';
 import 'package:ebeere/features/auth/models/auth_providers_enum.dart';
+<<<<<<< HEAD
+=======
+import 'package:ebeere/ui/design_system/decorated_background.dart';
+>>>>>>> 8ca00ce (Complete UI Redesign - 100% Implementation)
 import 'package:ebeere/ui/screens/auth/widgets/app_logo.dart';
 import 'package:ebeere/ui/screens/auth/widgets/email_textfield.dart';
 import 'package:ebeere/ui/screens/auth/widgets/pswd_textfield.dart';
@@ -40,7 +44,19 @@ class _SignUpScreenState extends State<SignUpScreen> {
     return BlocProvider<SignUpCubit>(
       create: (_) => SignUpCubit(AuthRepository()),
       child: Builder(
+<<<<<<< HEAD
         builder: (_) => Scaffold(body: SingleChildScrollView(child: form())),
+=======
+        builder: (_) => Scaffold(
+          body: DecoratedBackground(
+            shapesCount: 20,
+            shapesSeed: 456,
+            child: SingleChildScrollView(
+              child: form(),
+            ),
+          ),
+        ),
+>>>>>>> 8ca00ce (Complete UI Redesign - 100% Implementation)
       ),
     );
   }

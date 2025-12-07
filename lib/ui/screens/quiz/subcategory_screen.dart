@@ -19,6 +19,10 @@ import 'package:ebeere/ui/widgets/error_container.dart';
 import 'package:ebeere/ui/widgets/unlock_premium_category_dialog.dart';
 import 'package:ebeere/utils/extensions.dart';
 import 'package:ebeere/utils/ui_utils.dart';
+<<<<<<< HEAD
+=======
+import 'package:ebeere/ui/design_system/decorated_background.dart';
+>>>>>>> 8ca00ce (Complete UI Redesign - 100% Implementation)
 
 final class SubCategoryScreenArgs extends RouteArgs {
   const SubCategoryScreenArgs({
@@ -313,7 +317,14 @@ class _SubCategoryScreenState extends State<SubCategoryScreen> {
         title: Text(_category.categoryName!),
         roundedAppBar: false,
       ),
+<<<<<<< HEAD
       body: Stack(
+=======
+      body: DecoratedBackground(
+        shapesCount: 20,
+        shapesSeed: 201,
+        child: Stack(
+>>>>>>> 8ca00ce (Complete UI Redesign - 100% Implementation)
         children: [
           Padding(
             padding: EdgeInsets.only(bottom: bannerAdLoaded ? 60 : 0),
@@ -327,6 +338,10 @@ class _SubCategoryScreenState extends State<SubCategoryScreen> {
           ),
         ],
       ),
+<<<<<<< HEAD
+=======
+        ),
+>>>>>>> 8ca00ce (Complete UI Redesign - 100% Implementation)
     );
   }
 }

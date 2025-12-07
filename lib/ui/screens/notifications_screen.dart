@@ -14,6 +14,10 @@ import 'package:ebeere/ui/widgets/error_container.dart';
 import 'package:ebeere/utils/extensions.dart';
 import 'package:ebeere/utils/ui_utils.dart';
 import 'package:intl/intl.dart';
+<<<<<<< HEAD
+=======
+import 'package:ebeere/ui/design_system/decorated_background.dart';
+>>>>>>> 8ca00ce (Complete UI Redesign - 100% Implementation)
 
 class NotificationScreen extends StatefulWidget {
   const NotificationScreen({super.key});
@@ -55,7 +59,14 @@ class _NotificationScreen extends State<NotificationScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: QAppBar(title: Text(context.tr('notificationLbl')!)),
+<<<<<<< HEAD
       body: SingleChildScrollView(
+=======
+      body: DecoratedBackground(
+        shapesCount: 20,
+        shapesSeed: 504,
+        child: SingleChildScrollView(
+>>>>>>> 8ca00ce (Complete UI Redesign - 100% Implementation)
         padding: EdgeInsets.symmetric(
           vertical: context.height * UiUtils.vtMarginPct,
           horizontal: context.width * UiUtils.hzMarginPct,
@@ -329,6 +340,10 @@ class _NotificationCard extends StatelessWidget {
           ],
         ),
       ),
+<<<<<<< HEAD
+=======
+        ),
+>>>>>>> 8ca00ce (Complete UI Redesign - 100% Implementation)
     );
   }
 }

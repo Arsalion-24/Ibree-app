@@ -15,6 +15,10 @@ import 'package:ebeere/ui/widgets/custom_appbar.dart';
 import 'package:ebeere/ui/widgets/error_container.dart';
 import 'package:ebeere/utils/extensions.dart';
 import 'package:ebeere/utils/ui_utils.dart';
+<<<<<<< HEAD
+=======
+import 'package:ebeere/ui/design_system/decorated_background.dart';
+>>>>>>> 8ca00ce (Complete UI Redesign - 100% Implementation)
 
 class FunAndLearnTitleScreen extends StatefulWidget {
   const FunAndLearnTitleScreen({
@@ -220,7 +224,14 @@ class _FunAndLearnTitleScreen extends State<FunAndLearnTitleScreen> {
         !context.read<UserDetailsCubit>().removeAds();
     return Scaffold(
       appBar: QAppBar(roundedAppBar: false, title: Text(widget.title)),
+<<<<<<< HEAD
       body: Stack(
+=======
+      body: DecoratedBackground(
+        shapesCount: 20,
+        shapesSeed: 209,
+        child: Stack(
+>>>>>>> 8ca00ce (Complete UI Redesign - 100% Implementation)
         children: [
           Padding(
             padding: EdgeInsets.only(bottom: bannerAdLoaded ? 60 : 0),
@@ -232,6 +243,10 @@ class _FunAndLearnTitleScreen extends State<FunAndLearnTitleScreen> {
           ),
         ],
       ),
+<<<<<<< HEAD
+=======
+        ),
+>>>>>>> 8ca00ce (Complete UI Redesign - 100% Implementation)
     );
   }
 }

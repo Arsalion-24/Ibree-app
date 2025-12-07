@@ -18,6 +18,10 @@ import 'package:ebeere/ui/widgets/custom_rounded_button.dart';
 import 'package:ebeere/ui/widgets/error_container.dart';
 import 'package:ebeere/utils/extensions.dart';
 import 'package:ebeere/utils/ui_utils.dart';
+<<<<<<< HEAD
+=======
+import 'package:ebeere/ui/design_system/decorated_background.dart';
+>>>>>>> 8ca00ce (Complete UI Redesign - 100% Implementation)
 
 class BookmarkScreen extends StatefulWidget {
   const BookmarkScreen({super.key});
@@ -632,6 +636,7 @@ class _BookmarkScreenState extends State<BookmarkScreen>
           tabs: tabs.map((tab) => Tab(text: context.tr(tab.$1))).toList(),
         ),
       ),
+<<<<<<< HEAD
       body: Padding(
         padding: EdgeInsets.symmetric(
           vertical: context.height * UiUtils.vtMarginPct,
@@ -640,6 +645,20 @@ class _BookmarkScreenState extends State<BookmarkScreen>
         child: TabBarView(
           controller: tabController,
           children: tabs.map((tab) => tab.$2).toList(),
+=======
+      body: DecoratedBackground(
+        shapesCount: 19,
+        shapesSeed: 890,
+        child: Padding(
+          padding: EdgeInsets.symmetric(
+            vertical: context.height * UiUtils.vtMarginPct,
+            horizontal: context.width * UiUtils.hzMarginPct,
+          ),
+          child: TabBarView(
+            controller: tabController,
+            children: tabs.map((tab) => tab.$2).toList(),
+          ),
+>>>>>>> 8ca00ce (Complete UI Redesign - 100% Implementation)
         ),
       ),
     );

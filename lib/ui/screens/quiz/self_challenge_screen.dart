@@ -16,6 +16,10 @@ import 'package:ebeere/ui/widgets/custom_rounded_button.dart';
 import 'package:ebeere/utils/extensions.dart';
 import 'package:ebeere/utils/ui_utils.dart';
 import 'package:google_fonts/google_fonts.dart';
+<<<<<<< HEAD
+=======
+import 'package:ebeere/ui/design_system/decorated_background.dart';
+>>>>>>> 8ca00ce (Complete UI Redesign - 100% Implementation)
 
 class SelfChallengeScreen extends StatefulWidget {
   const SelfChallengeScreen({super.key});
@@ -327,9 +331,18 @@ class _SelfChallengeScreenState extends State<SelfChallengeScreen> {
           ScaffoldMessenger.of(context).removeCurrentSnackBar(),
       child: Scaffold(
         appBar: QAppBar(title: Text(context.tr('selfChallenge')!)),
+<<<<<<< HEAD
         body: Align(
           alignment: Alignment.topCenter,
           child: SingleChildScrollView(
+=======
+        body: DecoratedBackground(
+          shapesCount: 18,
+          shapesSeed: 555,
+          child: Align(
+            alignment: Alignment.topCenter,
+            child: SingleChildScrollView(
+>>>>>>> 8ca00ce (Complete UI Redesign - 100% Implementation)
             padding: EdgeInsets.symmetric(
               vertical: size.height * UiUtils.vtMarginPct,
               horizontal: size.width * UiUtils.hzMarginPct,
@@ -595,6 +608,10 @@ class _SelfChallengeScreenState extends State<SelfChallengeScreen> {
               ],
             ),
           ),
+<<<<<<< HEAD
+=======
+          ),
+>>>>>>> 8ca00ce (Complete UI Redesign - 100% Implementation)
         ),
       ),
     );

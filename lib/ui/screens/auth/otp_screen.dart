@@ -18,6 +18,10 @@ import 'package:ebeere/utils/extensions.dart';
 import 'package:ebeere/utils/ui_utils.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
+<<<<<<< HEAD
+=======
+import 'package:ebeere/ui/design_system/decorated_background.dart';
+>>>>>>> 8ca00ce (Complete UI Redesign - 100% Implementation)
 
 const int otpTimeOutSeconds = 60;
 
@@ -127,7 +131,14 @@ class _OtpScreen extends State<OtpScreen> {
       canPop:
           context.read<SignInCubit>().state is! SignInProgress && !isLoading,
       child: Scaffold(
+<<<<<<< HEAD
         body: Stack(
+=======
+        body: DecoratedBackground(
+        shapesCount: 20,
+        shapesSeed: 600,
+        child: Stack(
+>>>>>>> 8ca00ce (Complete UI Redesign - 100% Implementation)
           children: [
             SingleChildScrollView(
               padding: EdgeInsets.symmetric(
@@ -509,5 +520,9 @@ class _OtpScreen extends State<OtpScreen> {
         ),
       ],
     );
+<<<<<<< HEAD
+=======
+        ),
+>>>>>>> 8ca00ce (Complete UI Redesign - 100% Implementation)
   }
 }

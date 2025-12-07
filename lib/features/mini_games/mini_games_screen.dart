@@ -2,6 +2,10 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:ebeere/core/core.dart';
 import 'package:ebeere/utils/extensions.dart';
+<<<<<<< HEAD
+=======
+import 'package:ebeere/ui/design_system/decorated_background.dart';
+>>>>>>> 8ca00ce (Complete UI Redesign - 100% Implementation)
 
 class MiniGame {
   final String id;
@@ -116,6 +120,7 @@ class MiniGamesScreen extends StatelessWidget {
           onPressed: () => Navigator.of(context).pop(),
         ),
       ),
+<<<<<<< HEAD
       body: Container(
         decoration: BoxDecoration(
           gradient: LinearGradient(
@@ -128,6 +133,23 @@ class MiniGamesScreen extends StatelessWidget {
           ),
         ),
         child: SafeArea(
+=======
+      body: DecoratedBackground(
+        shapesCount: 22,
+        shapesSeed: 111,
+        child: Container(
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              colors: [
+                klPrimaryColor.withOpacity(0.3),
+                klSecondaryColor.withOpacity(0.3),
+              ],
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
+            ),
+          ),
+          child: SafeArea(
+>>>>>>> 8ca00ce (Complete UI Redesign - 100% Implementation)
           child: Padding(
             padding: const EdgeInsets.all(16),
             child: GridView.builder(
@@ -145,6 +167,10 @@ class MiniGamesScreen extends StatelessWidget {
             ),
           ),
         ),
+<<<<<<< HEAD
+=======
+        ),
+>>>>>>> 8ca00ce (Complete UI Redesign - 100% Implementation)
       ),
     );
   }

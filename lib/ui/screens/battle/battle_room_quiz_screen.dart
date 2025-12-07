@@ -19,6 +19,10 @@ import 'package:ebeere/features/quiz/cubits/set_coin_score_cubit.dart';
 import 'package:ebeere/features/quiz/models/question.dart';
 import 'package:ebeere/features/quiz/models/quiz_type.dart';
 import 'package:ebeere/features/system_config/cubits/system_config_cubit.dart';
+<<<<<<< HEAD
+=======
+import 'package:ebeere/ui/design_system/decorated_background.dart';
+>>>>>>> 8ca00ce (Complete UI Redesign - 100% Implementation)
 import 'package:ebeere/ui/screens/battle/widgets/message_box_container.dart';
 import 'package:ebeere/ui/screens/battle/widgets/message_container.dart';
 import 'package:ebeere/ui/widgets/already_logged_in_dialog.dart';
@@ -941,7 +945,14 @@ class _BattleRoomQuizScreenState extends State<BattleRoomQuizScreen>
             onBackPressed(battleRoomCubit);
           },
         ),
+<<<<<<< HEAD
         body: MultiBlocListener(
+=======
+        body: DecoratedBackground(
+          shapesCount: 22,
+          shapesSeed: 321,
+          child: MultiBlocListener(
+>>>>>>> 8ca00ce (Complete UI Redesign - 100% Implementation)
           listeners: [
             BlocListener<BattleRoomCubit, BattleRoomState>(
               bloc: battleRoomCubit,
@@ -1014,6 +1025,10 @@ class _BattleRoomQuizScreenState extends State<BattleRoomQuizScreen>
             ],
           ),
         ),
+<<<<<<< HEAD
+=======
+        ),
+>>>>>>> 8ca00ce (Complete UI Redesign - 100% Implementation)
       ),
     );
   }

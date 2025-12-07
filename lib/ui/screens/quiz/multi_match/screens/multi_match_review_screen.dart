@@ -16,6 +16,10 @@ import 'package:ebeere/ui/widgets/custom_appbar.dart';
 import 'package:ebeere/utils/answer_encryption.dart';
 import 'package:ebeere/utils/extensions.dart';
 import 'package:ebeere/utils/ui_utils.dart';
+<<<<<<< HEAD
+=======
+import 'package:ebeere/ui/design_system/decorated_background.dart';
+>>>>>>> 8ca00ce (Complete UI Redesign - 100% Implementation)
 
 final class MultiMatchReviewScreenArgs extends RouteArgs {
   const MultiMatchReviewScreenArgs({required this.questions});
@@ -71,11 +75,23 @@ class _MultiMatchReviewScreenState extends State<MultiMatchReviewScreen> {
         title: Text(context.tr('reviewAnswers')!),
         actions: [_buildReportButton()],
       ),
+<<<<<<< HEAD
       body: Stack(
         children: [
           Align(alignment: Alignment.topCenter, child: _buildQuestions()),
           Align(alignment: Alignment.bottomCenter, child: _buildBottomMenu()),
         ],
+=======
+      body: DecoratedBackground(
+        shapesCount: 21,
+        shapesSeed: 888,
+        child: Stack(
+          children: [
+            Align(alignment: Alignment.topCenter, child: _buildQuestions()),
+            Align(alignment: Alignment.bottomCenter, child: _buildBottomMenu()),
+          ],
+        ),
+>>>>>>> 8ca00ce (Complete UI Redesign - 100% Implementation)
       ),
     );
   }

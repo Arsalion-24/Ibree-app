@@ -13,6 +13,10 @@ import 'package:ebeere/ui/widgets/error_container.dart';
 import 'package:ebeere/utils/extensions.dart';
 import 'package:ebeere/utils/ui_utils.dart';
 import 'package:url_launcher/url_launcher.dart';
+<<<<<<< HEAD
+=======
+import 'package:ebeere/ui/design_system/decorated_background.dart';
+>>>>>>> 8ca00ce (Complete UI Redesign - 100% Implementation)
 
 /// AppSettingsScreen shows app setting details like about us,
 /// privacy policy, terms and conditions, etc.
@@ -87,9 +91,18 @@ class _AppSettingsScreenState extends State<AppSettingsScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: QAppBar(title: Text(_screenTitle)),
+<<<<<<< HEAD
       body: BlocBuilder<AppSettingsCubit, AppSettingsState>(
         bloc: context.read<AppSettingsCubit>(),
         builder: (context, state) {
+=======
+      body: DecoratedBackground(
+        shapesCount: 15,
+        shapesSeed: 765,
+        child: BlocBuilder<AppSettingsCubit, AppSettingsState>(
+          bloc: context.read<AppSettingsCubit>(),
+          builder: (context, state) {
+>>>>>>> 8ca00ce (Complete UI Redesign - 100% Implementation)
           if (state is AppSettingsFetchFailure) {
             return Center(
               child: ErrorContainer(
@@ -123,6 +136,10 @@ class _AppSettingsScreenState extends State<AppSettingsScreen> {
 
           return const Center(child: CircularProgressIndicator());
         },
+<<<<<<< HEAD
+=======
+        ),
+>>>>>>> 8ca00ce (Complete UI Redesign - 100% Implementation)
       ),
     );
   }

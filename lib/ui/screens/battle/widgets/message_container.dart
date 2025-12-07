@@ -1,8 +1,15 @@
+<<<<<<< HEAD
 import 'dart:ui' as ui;
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+=======
+import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:ebeere/core/config/colors.dart';
+>>>>>>> 8ca00ce (Complete UI Redesign - 100% Implementation)
 import 'package:ebeere/core/constants/assets_constants.dart';
 import 'package:ebeere/features/battle_room/cubits/battle_room_cubit.dart';
 import 'package:ebeere/features/battle_room/cubits/message_cubit.dart';
@@ -11,7 +18,14 @@ import 'package:ebeere/features/battle_room/models/message.dart';
 import 'package:ebeere/features/profile_management/cubits/user_details_cubit.dart';
 import 'package:ebeere/features/quiz/models/quiz_type.dart';
 import 'package:ebeere/utils/extensions.dart';
+<<<<<<< HEAD
 
+=======
+import 'package:google_fonts/google_fonts.dart';
+
+/// Chat message bubble - redesigned as simple purple/gray pills
+/// Matches client UI specifications
+>>>>>>> 8ca00ce (Complete UI Redesign - 100% Implementation)
 class MessageContainer extends StatelessWidget {
   const MessageContainer({
     required this.isCurrentUser,
@@ -26,7 +40,10 @@ class MessageContainer extends StatelessWidget {
 
   Widget _buildMessage(BuildContext context, MessageState messageState) {
     if (messageState is MessageFetchedSuccess) {
+<<<<<<< HEAD
       //if no message has exchanged
+=======
+>>>>>>> 8ca00ce (Complete UI Redesign - 100% Implementation)
       if (messageState.messages.isEmpty) {
         return const SizedBox();
       }
@@ -37,12 +54,18 @@ class MessageContainer extends StatelessWidget {
       if (quizType == QuizTypes.oneVsOneBattle) {
         final battleRoomCubit = context.read<BattleRoomCubit>();
         if (isCurrentUser) {
+<<<<<<< HEAD
           //get current user's latest message
+=======
+>>>>>>> 8ca00ce (Complete UI Redesign - 100% Implementation)
           message = context.read<MessageCubit>().getUserLatestMessage(
             battleRoomCubit.getCurrentUserDetails(currentUserId).uid,
           );
         } else {
+<<<<<<< HEAD
           //get opponent user's latest message
+=======
+>>>>>>> 8ca00ce (Complete UI Redesign - 100% Implementation)
           message = context.read<MessageCubit>().getUserLatestMessage(
             battleRoomCubit.getOpponentUserDetails(currentUserId).uid,
           );
@@ -50,12 +73,18 @@ class MessageContainer extends StatelessWidget {
       } else {
         final battleRoomCubit = context.read<MultiUserBattleRoomCubit>();
         if (isCurrentUser) {
+<<<<<<< HEAD
           //get current user's latest message
+=======
+>>>>>>> 8ca00ce (Complete UI Redesign - 100% Implementation)
           message = context.read<MessageCubit>().getUserLatestMessage(
             battleRoomCubit.getUser(currentUserId)!.uid,
           );
         } else {
+<<<<<<< HEAD
           //get opponent user's latest message
+=======
+>>>>>>> 8ca00ce (Complete UI Redesign - 100% Implementation)
           final opponentUserId = battleRoomCubit
               .getOpponentUsers(currentUserId)[opponentUserIndex!]!
               .uid;
@@ -66,6 +95,7 @@ class MessageContainer extends StatelessWidget {
       }
 
       return Padding(
+<<<<<<< HEAD
         padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 8),
         child: message.isTextMessage
             ? Text(
@@ -77,17 +107,36 @@ class MessageContainer extends StatelessWidget {
                   color: Theme.of(context).colorScheme.surface,
                   fontSize: 13.5,
                   height: 1,
+=======
+        padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+        child: message.isTextMessage
+            ? Text(
+                message.message,
+                maxLines: 2,
+                overflow: TextOverflow.ellipsis,
+                textAlign: TextAlign.center,
+                style: GoogleFonts.nunito(
+                  color: Colors.white,
+                  fontSize: 13,
+                  fontWeight: FontWeight.w600,
+                  height: 1.2,
+>>>>>>> 8ca00ce (Complete UI Redesign - 100% Implementation)
                 ),
               )
             : SvgPicture.asset(
                 Assets.emoji(message.message),
+<<<<<<< HEAD
                 height: 25,
+=======
+                height: 24,
+>>>>>>> 8ca00ce (Complete UI Redesign - 100% Implementation)
               ),
       );
     }
     return const SizedBox();
   }
 
+<<<<<<< HEAD
   CustomPainter _buildGroupBattleCustomPainter(BuildContext context) {
     if (isCurrentUser || opponentUserIndex == 0) {
       return MessageCustomPainter(
@@ -128,10 +177,44 @@ class MessageContainer extends StatelessWidget {
             );
           },
         ),
+=======
+  @override
+  Widget build(BuildContext context) {
+    // Purple pill for opponent, gray pill for current user
+    final backgroundColor = isCurrentUser
+        ? Colors.grey[400]!
+        : klPrimaryColor;
+
+    return Container(
+      constraints: BoxConstraints(
+        minWidth: context.width * 0.2,
+        maxWidth: context.width * 0.45,
+      ),
+      decoration: BoxDecoration(
+        color: backgroundColor,
+        borderRadius: BorderRadius.circular(20),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withValues(alpha: 0.1),
+            blurRadius: 8,
+            offset: const Offset(0, 2),
+          ),
+        ],
+      ),
+      child: BlocBuilder<MessageCubit, MessageState>(
+        bloc: context.read<MessageCubit>(),
+        builder: (context, state) {
+          return AnimatedSwitcher(
+            duration: const Duration(milliseconds: 200),
+            child: _buildMessage(context, state),
+          );
+        },
+>>>>>>> 8ca00ce (Complete UI Redesign - 100% Implementation)
       ),
     );
   }
 }
+<<<<<<< HEAD
 
 class TopMessageCustomPainter extends CustomPainter {
   TopMessageCustomPainter({
@@ -264,3 +347,5 @@ class MessageCustomPainter extends CustomPainter {
     return true;
   }
 }
+=======
+>>>>>>> 8ca00ce (Complete UI Redesign - 100% Implementation)

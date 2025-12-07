@@ -6,6 +6,10 @@ import 'package:ebeere/ui/screens/app_settings_screen.dart';
 import 'package:ebeere/ui/widgets/custom_appbar.dart';
 import 'package:ebeere/utils/extensions.dart';
 import 'package:ebeere/utils/ui_utils.dart';
+<<<<<<< HEAD
+=======
+import 'package:ebeere/ui/design_system/decorated_background.dart';
+>>>>>>> 8ca00ce (Complete UI Redesign - 100% Implementation)
 
 class AboutAppScreen extends StatelessWidget {
   const AboutAppScreen({super.key});
@@ -32,12 +36,24 @@ class AboutAppScreen extends StatelessWidget {
 
     return Scaffold(
       appBar: QAppBar(title: Text(context.tr(aboutQuizAppKey)!)),
+<<<<<<< HEAD
       body: Padding(
         padding: EdgeInsets.symmetric(
           vertical: context.height * UiUtils.vtMarginPct,
           horizontal: context.width * UiUtils.hzMarginPct,
         ),
         child: Column(
+=======
+      body: DecoratedBackground(
+        shapesCount: 14,
+        shapesSeed: 876,
+        child: Padding(
+          padding: EdgeInsets.symmetric(
+            vertical: context.height * UiUtils.vtMarginPct,
+            horizontal: context.width * UiUtils.hzMarginPct,
+          ),
+          child: Column(
+>>>>>>> 8ca00ce (Complete UI Redesign - 100% Implementation)
           spacing: UiUtils.listTileGap,
           children: options
               .map(
@@ -67,6 +83,10 @@ class AboutAppScreen extends StatelessWidget {
                 },
               )
               .toList(growable: false),
+<<<<<<< HEAD
+=======
+          ),
+>>>>>>> 8ca00ce (Complete UI Redesign - 100% Implementation)
         ),
       ),
     );

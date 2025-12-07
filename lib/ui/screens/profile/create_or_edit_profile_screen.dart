@@ -18,6 +18,10 @@ import 'package:ebeere/features/profile_management/cubits/user_details_cubit.dar
 import 'package:ebeere/features/profile_management/models/user_profile.dart';
 import 'package:ebeere/features/profile_management/profile_management_repository.dart';
 import 'package:ebeere/features/system_config/cubits/system_config_cubit.dart';
+<<<<<<< HEAD
+=======
+import 'package:ebeere/ui/design_system/decorated_background.dart';
+>>>>>>> 8ca00ce (Complete UI Redesign - 100% Implementation)
 import 'package:ebeere/ui/widgets/all.dart';
 import 'package:ebeere/utils/extensions.dart';
 import 'package:ebeere/utils/ui_utils.dart';
@@ -890,7 +894,14 @@ class _SelectProfilePictureScreen extends State<CreateOrEditProfileScreen> {
       canPop: !widget.args.isNewUser,
       child: Scaffold(
         appBar: appBar,
+<<<<<<< HEAD
         body: Stack(
+=======
+        body: DecoratedBackground(
+          shapesCount: 18,
+          shapesSeed: 789,
+          child: Stack(
+>>>>>>> 8ca00ce (Complete UI Redesign - 100% Implementation)
           children: [
             BlocConsumer<UserDetailsCubit, UserDetailsState>(
               listener: (context, state) {
@@ -1014,6 +1025,10 @@ class _SelectProfilePictureScreen extends State<CreateOrEditProfileScreen> {
             ),
           ],
         ),
+<<<<<<< HEAD
+=======
+        ),
+>>>>>>> 8ca00ce (Complete UI Redesign - 100% Implementation)
       ),
     );
   }

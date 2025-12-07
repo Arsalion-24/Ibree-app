@@ -13,6 +13,10 @@ import 'package:ebeere/features/auth/cubits/sign_in_cubit.dart';
 import 'package:ebeere/features/auth/models/auth_providers_enum.dart';
 import 'package:ebeere/features/profile_management/cubits/user_details_cubit.dart';
 import 'package:ebeere/features/system_config/cubits/system_config_cubit.dart';
+<<<<<<< HEAD
+=======
+import 'package:ebeere/ui/design_system/decorated_background.dart';
+>>>>>>> 8ca00ce (Complete UI Redesign - 100% Implementation)
 import 'package:ebeere/ui/screens/auth/widgets/app_logo.dart';
 import 'package:ebeere/ui/screens/auth/widgets/email_textfield.dart';
 import 'package:ebeere/ui/screens/auth/widgets/pswd_textfield.dart';
@@ -50,7 +54,19 @@ class _SignInScreenState extends State<SignInScreen> {
       create: (_) => SignInCubit(AuthRepository()),
       child: Builder(
         builder: (context) =>
+<<<<<<< HEAD
             Scaffold(body: SingleChildScrollView(child: showForm(context))),
+=======
+            Scaffold(
+              body: DecoratedBackground(
+                shapesCount: 20,
+                shapesSeed: 123,
+                child: SingleChildScrollView(
+                  child: showForm(context),
+                ),
+              ),
+            ),
+>>>>>>> 8ca00ce (Complete UI Redesign - 100% Implementation)
       ),
     );
   }

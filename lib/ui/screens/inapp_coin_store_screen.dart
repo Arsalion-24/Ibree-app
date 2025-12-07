@@ -19,6 +19,10 @@ import 'package:ebeere/ui/widgets/all.dart';
 import 'package:ebeere/utils/extensions.dart';
 import 'package:ebeere/utils/ui_utils.dart';
 import 'package:in_app_purchase/in_app_purchase.dart';
+<<<<<<< HEAD
+=======
+import 'package:ebeere/ui/design_system/decorated_background.dart';
+>>>>>>> 8ca00ce (Complete UI Redesign - 100% Implementation)
 
 class CoinStoreScreen extends StatefulWidget {
   const CoinStoreScreen({super.key});
@@ -250,7 +254,14 @@ class _CoinStoreScreenState extends State<CoinStoreScreen>
             }
           },
         ),
+<<<<<<< HEAD
         body: Stack(
+=======
+        body: DecoratedBackground(
+        shapesCount: 20,
+        shapesSeed: 505,
+        child: Stack(
+>>>>>>> 8ca00ce (Complete UI Redesign - 100% Implementation)
           children: [
             Align(
               alignment: Alignment.topCenter,
@@ -396,6 +407,10 @@ class _CoinStoreScreenState extends State<CoinStoreScreen>
           ],
         ),
       ),
+<<<<<<< HEAD
+=======
+        ),
+>>>>>>> 8ca00ce (Complete UI Redesign - 100% Implementation)
     );
   }
 }
