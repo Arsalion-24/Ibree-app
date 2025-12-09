@@ -24,8 +24,6 @@ const Color kCorrectAnswerColor = Color(0xFF5DB760);
 const Color kWrongAnswerColor = Color(0xFFFF6169);
 const Color kPendingColor = Colors.orangeAccent;
 
-<<<<<<< HEAD
-=======
 /// Action Buttons
 const Color kActionRed = Color(0xFFE63946);
 const Color kActionPink = Color(0xFFF1495D);
@@ -42,7 +40,6 @@ const Color kAnswerBorderGray = Color(0xFFA0AEC0);
 const Color kPlayerBorderYellow = Color(0xFFFFD700);
 const Color kPlayerBorderPink = Color(0xFFF1495D);
 
->>>>>>> 8ca00ce (Complete UI Redesign - 100% Implementation)
 /// Gradients
 const kPrimaryGradient = LinearGradient(
   colors: [klPrimaryColor, klSecondaryColor],
@@ -55,8 +52,6 @@ const kDarkPrimaryGradient = LinearGradient(
   begin: Alignment.topLeft,
   end: Alignment.bottomRight,
 );
-<<<<<<< HEAD
-=======
 
 const kLightBackgroundGradient = LinearGradient(
   colors: [Color(0xFFFFFFFF), Color(0xFFF0F4FF)],
@@ -81,4 +76,3 @@ const kPurpleDarkCardGradient = LinearGradient(
   begin: Alignment.topLeft,
   end: Alignment.bottomRight,
 );
->>>>>>> 8ca00ce (Complete UI Redesign - 100% Implementation)

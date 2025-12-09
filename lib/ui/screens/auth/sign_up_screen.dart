@@ -6,47 +6,6 @@ import 'package:ebeere/core/core.dart';
 import 'package:ebeere/features/auth/auth_repository.dart';
 import 'package:ebeere/features/auth/cubits/sign_up_cubit.dart';
 import 'package:ebeere/features/auth/models/auth_providers_enum.dart';
-<<<<<<< HEAD
-=======
-import 'package:ebeere/ui/design_system/decorated_background.dart';
->>>>>>> 8ca00ce (Complete UI Redesign - 100% Implementation)
-import 'package:ebeere/ui/screens/auth/widgets/app_logo.dart';
-import 'package:ebeere/ui/screens/auth/widgets/email_textfield.dart';
-import 'package:ebeere/ui/screens/auth/widgets/pswd_textfield.dart';
-import 'package:ebeere/ui/screens/auth/widgets/terms_and_condition.dart';
-import 'package:ebeere/ui/widgets/circular_progress_container.dart';
-import 'package:ebeere/utils/extensions.dart';
-import 'package:ebeere/utils/ui_utils.dart';
-import 'package:google_fonts/google_fonts.dart';
-
-class SignUpScreen extends StatefulWidget {
-  const SignUpScreen({super.key});
-
-  @override
-  State<SignUpScreen> createState() => _SignUpScreenState();
-
-  static Route<dynamic> route() {
-    return CupertinoPageRoute(builder: (_) => const SignUpScreen());
-  }
-}
-
-class _SignUpScreenState extends State<SignUpScreen> {
-  final _formKey = GlobalKey<FormState>();
-
-  bool isLoading = false;
-  final emailController = TextEditingController();
-  final pswdController = TextEditingController();
-  final confirmPswdController = TextEditingController();
-  String userEmail = '';
-
-  @override
-  Widget build(BuildContext context) {
-    return BlocProvider<SignUpCubit>(
-      create: (_) => SignUpCubit(AuthRepository()),
-      child: Builder(
-<<<<<<< HEAD
-        builder: (_) => Scaffold(body: SingleChildScrollView(child: form())),
-=======
         builder: (_) => Scaffold(
           body: DecoratedBackground(
             shapesCount: 20,
@@ -56,7 +15,6 @@ class _SignUpScreenState extends State<SignUpScreen> {
             ),
           ),
         ),
->>>>>>> 8ca00ce (Complete UI Redesign - 100% Implementation)
       ),
     );
   }

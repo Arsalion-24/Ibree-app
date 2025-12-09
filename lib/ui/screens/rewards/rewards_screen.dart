@@ -13,99 +13,12 @@ import 'package:ebeere/ui/widgets/custom_back_button.dart';
 import 'package:ebeere/ui/widgets/error_container.dart';
 import 'package:ebeere/utils/extensions.dart';
 import 'package:ebeere/utils/ui_utils.dart';
-<<<<<<< HEAD
-=======
-import 'package:ebeere/ui/design_system/decorated_background.dart';
->>>>>>> 8ca00ce (Complete UI Redesign - 100% Implementation)
-
-class RewardsScreen extends StatefulWidget {
-  const RewardsScreen({super.key});
-
-  static Route<dynamic> route(RouteSettings routeSettings) {
-    return CupertinoPageRoute(
-      builder: (_) => BlocProvider<UpdateCoinsCubit>(
-        child: const RewardsScreen(),
-        create: (_) => UpdateCoinsCubit(ProfileManagementRepository()),
-      ),
-    );
-  }
-
-  @override
-  State<RewardsScreen> createState() => _RewardsScreenState();
-}
-
-class _RewardsScreenState extends State<RewardsScreen>
-    with SingleTickerProviderStateMixin {
-  late AnimationController _entranceAnimationController;
-
-  @override
-  void initState() {
-    super.initState();
-
-    _entranceAnimationController = AnimationController(
-      vsync: this,
-      duration: const Duration(milliseconds: 600),
-    )..forward();
-  }
-
-  @override
-  void dispose() {
-    _entranceAnimationController.dispose();
-    super.dispose();
-  }
-
-  Widget _buildRewardContainer(Badges reward) {
-    return GestureDetector(
-      onTap: () {
-        if (reward.status == BadgesStatus.unlocked) {
-          Navigator.of(context).push(
-            PageRouteBuilder<dynamic>(
-              transitionDuration: const Duration(milliseconds: 400),
-              opaque: false,
-              pageBuilder: (context, firstAnimation, secondAnimation) {
-                return FadeTransition(
-                  opacity: firstAnimation,
-                  child: BlocProvider<UpdateCoinsCubit>(
-                    create: (context) =>
-                        UpdateCoinsCubit(ProfileManagementRepository()),
-                    child: ScratchRewardScreen(reward: reward),
-                  ),
-                );
-              },
-            ),
-          );
-        }
-      },
-      child: Container(
-        decoration: BoxDecoration(
-          color: reward.status == BadgesStatus.rewardUnlocked
-              ? context.colorScheme.surface
-              : context.primaryColor,
-          borderRadius: BorderRadius.circular(10),
-        ),
-        child: reward.status == BadgesStatus.rewardUnlocked
-            ? UnlockedRewardContent(reward: reward, increaseFont: false)
-            : ClipRRect(
-                borderRadius: BorderRadius.circular(10),
-                child: Image.asset(Assets.scratchCardCover, fit: BoxFit.cover),
-              ),
-      ),
-    );
-  }
-
-  Widget _buildRewards() {
-<<<<<<< HEAD
-    return BlocBuilder<BadgesCubit, BadgesState>(
-      bloc: context.read<BadgesCubit>(),
-      builder: (context, state) {
-=======
     return DecoratedBackground(
       shapesCount: 20,
       shapesSeed: 543,
       child: BlocBuilder<BadgesCubit, BadgesState>(
         bloc: context.read<BadgesCubit>(),
         builder: (context, state) {
->>>>>>> 8ca00ce (Complete UI Redesign - 100% Implementation)
         if (state is BadgesFetchFailure) {
           return SliverToBoxAdapter(
             child: Center(
@@ -171,10 +84,7 @@ class _RewardsScreenState extends State<RewardsScreen>
 
         return const Center(child: CircularProgressContainer());
       },
-<<<<<<< HEAD
-=======
       ),
->>>>>>> 8ca00ce (Complete UI Redesign - 100% Implementation)
     );
   }
 

@@ -17,67 +17,10 @@ import 'package:ebeere/ui/widgets/custom_appbar.dart';
 import 'package:ebeere/ui/widgets/error_container.dart';
 import 'package:ebeere/utils/extensions.dart';
 import 'package:ebeere/utils/ui_utils.dart';
-<<<<<<< HEAD
-=======
-import 'package:ebeere/ui/design_system/decorated_background.dart';
->>>>>>> 8ca00ce (Complete UI Redesign - 100% Implementation)
-
-class BadgesScreen extends StatefulWidget {
-  const BadgesScreen({super.key});
-
-  static Route<BadgesScreen> route(RouteSettings routeSettings) {
-    return CupertinoPageRoute(builder: (_) => const BadgesScreen());
-  }
-
-  @override
-  State<BadgesScreen> createState() => _BadgesScreenState();
-}
-
-class _BadgesScreenState extends State<BadgesScreen> {
-  @override
-  void initState() {
-    super.initState();
-    //Initial fetch and updates
-    Future.delayed(Duration.zero, () {
-      context.read<BadgesCubit>().getBadges();
-      UiUtils.updateBadgesLocally(context);
-      context.read<StatisticCubit>().getStatistic();
-      context.read<InterstitialAdCubit>().showAd(context);
-    });
-  }
-
-  void showBadgeDetails(BuildContext context, Badges badge) {
-    showModalBottomSheet<void>(
-      backgroundColor: context.scaffoldBackgroundColor,
-      elevation: 5,
-      isScrollControlled: true,
-      shape: const RoundedRectangleBorder(
-        borderRadius: UiUtils.bottomSheetTopRadius,
-      ),
-      context: context,
-      builder: (_) => _BadgeDetailsSheet(badge: badge),
-    );
-  }
-
-  List<Badges> _organizedBadges(List<Badges> badges) {
-    final lockedBadges = badges
-        .where((b) => b.status == BadgesStatus.locked)
-        .toList();
-    final unlockedBadges = badges
-        .where((b) => b.status != BadgesStatus.locked)
-        .toList();
-    return [...unlockedBadges, ...lockedBadges];
-  }
-
-  Widget _buildBadges() {
-<<<<<<< HEAD
-    return BlocConsumer<BadgesCubit, BadgesState>(
-=======
     return DecoratedBackground(
       shapesCount: 16,
       shapesSeed: 456,
       child: BlocConsumer<BadgesCubit, BadgesState>(
->>>>>>> 8ca00ce (Complete UI Redesign - 100% Implementation)
       listener: (context, state) {
         if (state is BadgesFetchFailure) {
           if (state.errorMessage == errorCodeUnauthorizedAccess) {
@@ -129,10 +72,7 @@ class _BadgesScreenState extends State<BadgesScreen> {
           ),
         );
       },
-<<<<<<< HEAD
-=======
       ),
->>>>>>> 8ca00ce (Complete UI Redesign - 100% Implementation)
     );
   }
 

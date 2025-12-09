@@ -13,50 +13,6 @@ import 'package:ebeere/features/auth/cubits/sign_in_cubit.dart';
 import 'package:ebeere/features/auth/models/auth_providers_enum.dart';
 import 'package:ebeere/features/profile_management/cubits/user_details_cubit.dart';
 import 'package:ebeere/features/system_config/cubits/system_config_cubit.dart';
-<<<<<<< HEAD
-=======
-import 'package:ebeere/ui/design_system/decorated_background.dart';
->>>>>>> 8ca00ce (Complete UI Redesign - 100% Implementation)
-import 'package:ebeere/ui/screens/auth/widgets/app_logo.dart';
-import 'package:ebeere/ui/screens/auth/widgets/email_textfield.dart';
-import 'package:ebeere/ui/screens/auth/widgets/pswd_textfield.dart';
-import 'package:ebeere/ui/screens/auth/widgets/terms_and_condition.dart';
-import 'package:ebeere/ui/screens/profile/create_or_edit_profile_screen.dart';
-import 'package:ebeere/ui/widgets/all.dart';
-import 'package:ebeere/utils/extensions.dart';
-import 'package:ebeere/utils/ui_utils.dart';
-import 'package:google_fonts/google_fonts.dart';
-
-class SignInScreen extends StatefulWidget {
-  const SignInScreen({super.key});
-
-  @override
-  State<SignInScreen> createState() => _SignInScreenState();
-
-  static Route<dynamic> route() {
-    return CupertinoPageRoute(builder: (_) => const SignInScreen());
-  }
-}
-
-class _SignInScreenState extends State<SignInScreen> {
-  final _formKey = GlobalKey<FormState>();
-  final _formKeyDialog = GlobalKey<FormState>();
-
-  bool isLoading = false;
-
-  final emailController = TextEditingController();
-  final forgotPswdController = TextEditingController();
-  final pswdController = TextEditingController();
-
-  @override
-  Widget build(BuildContext context) {
-    return BlocProvider<SignInCubit>(
-      create: (_) => SignInCubit(AuthRepository()),
-      child: Builder(
-        builder: (context) =>
-<<<<<<< HEAD
-            Scaffold(body: SingleChildScrollView(child: showForm(context))),
-=======
             Scaffold(
               body: DecoratedBackground(
                 shapesCount: 20,
@@ -66,7 +22,6 @@ class _SignInScreenState extends State<SignInScreen> {
                 ),
               ),
             ),
->>>>>>> 8ca00ce (Complete UI Redesign - 100% Implementation)
       ),
     );
   }

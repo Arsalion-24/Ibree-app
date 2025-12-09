@@ -10,86 +10,10 @@ import 'package:ebeere/features/profile_management/cubits/user_details_cubit.dar
 import 'package:ebeere/features/quiz/cubits/quiz_category_cubit.dart';
 import 'package:ebeere/features/quiz/models/category.dart';
 import 'package:ebeere/features/quiz/models/quiz_type.dart';
-<<<<<<< HEAD
-=======
-import 'package:ebeere/ui/design_system/decorated_background.dart';
->>>>>>> 8ca00ce (Complete UI Redesign - 100% Implementation)
-import 'package:ebeere/ui/screens/quiz/guess_the_word_quiz_screen.dart';
-import 'package:ebeere/ui/screens/quiz/levels_screen.dart';
-import 'package:ebeere/ui/screens/quiz/multi_match/screens/multi_match_quiz_screen.dart';
-import 'package:ebeere/ui/screens/quiz/subcategory_and_level_screen.dart';
-import 'package:ebeere/ui/screens/quiz/subcategory_screen.dart';
-import 'package:ebeere/ui/widgets/already_logged_in_dialog.dart';
-import 'package:ebeere/ui/widgets/circular_progress_container.dart';
-import 'package:ebeere/ui/widgets/custom_appbar.dart';
-import 'package:ebeere/ui/widgets/error_container.dart';
-import 'package:ebeere/ui/widgets/premium_category_access_badge.dart';
-import 'package:ebeere/ui/widgets/unlock_premium_category_dialog.dart';
-import 'package:ebeere/utils/extensions.dart';
-import 'package:ebeere/utils/ui_utils.dart';
-
-final class CategoryScreenArgs extends RouteArgs {
-  const CategoryScreenArgs({required this.quizType});
-
-  final QuizTypes quizType;
-}
-
-class CategoryScreen extends StatefulWidget {
-  const CategoryScreen({required this.args, super.key});
-
-  final CategoryScreenArgs args;
-
-  @override
-  State<CategoryScreen> createState() => _CategoryScreen();
-
-  static Route<dynamic> route(RouteSettings routeSettings) {
-    final args = routeSettings.args<CategoryScreenArgs>();
-
-    return CupertinoPageRoute(builder: (_) => CategoryScreen(args: args));
-  }
-}
-
-class _CategoryScreen extends State<CategoryScreen> {
-  final ScrollController scrollController = ScrollController();
-
-  @override
-  void initState() {
-    super.initState();
-    // preload ads
-    Future.delayed(Duration.zero, () {
-      context.read<InterstitialAdCubit>().showAd(context);
-    });
-
-    context.read<QuizCategoryCubit>().getQuizCategoryWithUserId(
-      languageId: UiUtils.getCurrentQuizLanguageId(context),
-      type: UiUtils.getCategoryTypeNumberFromQuizType(widget.args.quizType),
-    );
-  }
-
-  String getCategoryTitle(QuizTypes quizType) => context.tr(switch (quizType) {
-    QuizTypes.mathMania => 'mathMania',
-    QuizTypes.audioQuestions => 'audioQuestions',
-    QuizTypes.guessTheWord => 'guessTheWord',
-    QuizTypes.funAndLearn => 'funAndLearn',
-    QuizTypes.multiMatch => 'multiMatch',
-    _ => 'quizZone',
-  })!;
-
-  @override
-  Widget build(BuildContext context) {
-    final bannerAdLoaded =
-        context.watch<BannerAdCubit>().bannerAdLoaded &&
-        !context.read<UserDetailsCubit>().removeAds();
-    return Scaffold(
-      appBar: QAppBar(title: Text(getCategoryTitle(widget.args.quizType))),
-<<<<<<< HEAD
-      body: Stack(
-=======
       body: DecoratedBackground(
         shapesCount: 20,
         shapesSeed: 555,
         child: Stack(
->>>>>>> 8ca00ce (Complete UI Redesign - 100% Implementation)
         children: [
           Padding(
             padding: EdgeInsets.only(bottom: bannerAdLoaded ? 60 : 0),
@@ -100,10 +24,7 @@ class _CategoryScreen extends State<CategoryScreen> {
             child: BannerAdContainer(),
           ),
         ],
-<<<<<<< HEAD
-=======
         ),
->>>>>>> 8ca00ce (Complete UI Redesign - 100% Implementation)
       ),
     );
   }

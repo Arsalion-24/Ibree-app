@@ -5,34 +5,10 @@ import 'package:ebeere/ui/widgets/custom_appbar.dart';
 import 'package:ebeere/utils/datetime_utils.dart';
 import 'package:ebeere/utils/extensions.dart';
 import 'package:ebeere/utils/ui_utils.dart';
-<<<<<<< HEAD
-=======
-import 'package:ebeere/ui/design_system/decorated_background.dart';
->>>>>>> 8ca00ce (Complete UI Redesign - 100% Implementation)
-
-class ExamResultScreen extends StatelessWidget {
-  const ExamResultScreen({required this.examResult, super.key});
-
-  final ExamResult examResult;
-
-  @override
-  Widget build(BuildContext context) {
-    final formattedDate = DateTimeUtils.dateFormat.format(
-      DateTime.parse(examResult.date),
-    );
-    final colorScheme = Theme.of(context).colorScheme;
-    final size = context;
-
-    return Scaffold(
-      appBar: QAppBar(elevation: 0, title: Text(context.tr(examResultKey)!)),
-<<<<<<< HEAD
-      body: Column(
-=======
       body: DecoratedBackground(
         shapesCount: 20,
         shapesSeed: 702,
         child: Column(
->>>>>>> 8ca00ce (Complete UI Redesign - 100% Implementation)
         children: [
           Container(
             width: size.width,
@@ -369,10 +345,7 @@ class _StatCard extends StatelessWidget {
           ),
         ],
       ),
-<<<<<<< HEAD
-=======
         ),
->>>>>>> 8ca00ce (Complete UI Redesign - 100% Implementation)
     );
   }
 }

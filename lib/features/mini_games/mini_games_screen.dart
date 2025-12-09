@@ -2,10 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:ebeere/core/core.dart';
 import 'package:ebeere/utils/extensions.dart';
-<<<<<<< HEAD
-=======
 import 'package:ebeere/ui/design_system/decorated_background.dart';
->>>>>>> 8ca00ce (Complete UI Redesign - 100% Implementation)
 
 class MiniGame {
   final String id;
@@ -120,20 +117,6 @@ class MiniGamesScreen extends StatelessWidget {
           onPressed: () => Navigator.of(context).pop(),
         ),
       ),
-<<<<<<< HEAD
-      body: Container(
-        decoration: BoxDecoration(
-          gradient: LinearGradient(
-            colors: [
-              klPrimaryColor,
-              klSecondaryColor,
-            ],
-            begin: Alignment.topLeft,
-            end: Alignment.bottomRight,
-          ),
-        ),
-        child: SafeArea(
-=======
       body: DecoratedBackground(
         shapesCount: 22,
         shapesSeed: 111,
@@ -149,28 +132,24 @@ class MiniGamesScreen extends StatelessWidget {
             ),
           ),
           child: SafeArea(
->>>>>>> 8ca00ce (Complete UI Redesign - 100% Implementation)
-          child: Padding(
-            padding: const EdgeInsets.all(16),
-            child: GridView.builder(
-              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 2,
-                crossAxisSpacing: 16,
-                mainAxisSpacing: 16,
-                childAspectRatio: 0.85,
+            child: Padding(
+              padding: const EdgeInsets.all(16),
+              child: GridView.builder(
+                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 2,
+                  crossAxisSpacing: 16,
+                  mainAxisSpacing: 16,
+                  childAspectRatio: 0.85,
+                ),
+                itemCount: games.length,
+                itemBuilder: (context, index) {
+                  final game = games[index];
+                  return _MiniGameCard(game: game);
+                },
               ),
-              itemCount: games.length,
-              itemBuilder: (context, index) {
-                final game = games[index];
-                return _MiniGameCard(game: game);
-              },
             ),
           ),
         ),
-<<<<<<< HEAD
-=======
-        ),
->>>>>>> 8ca00ce (Complete UI Redesign - 100% Implementation)
       ),
     );
   }

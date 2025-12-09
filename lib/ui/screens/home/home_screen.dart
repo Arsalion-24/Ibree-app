@@ -1,10 +1,3 @@
-<<<<<<< HEAD
-import 'dart:async';
-import 'dart:developer';
-import 'dart:io';
-
-=======
->>>>>>> 8ca00ce (Complete UI Redesign - 100% Implementation)
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -28,10 +21,7 @@ import 'package:ebeere/features/quiz/cubits/quiz_category_cubit.dart';
 import 'package:ebeere/features/quiz/cubits/subcategory_cubit.dart';
 import 'package:ebeere/features/quiz/models/quiz_type.dart';
 import 'package:ebeere/features/system_config/cubits/system_config_cubit.dart';
-<<<<<<< HEAD
-=======
 import 'package:ebeere/ui/design_system/decorated_background.dart';
->>>>>>> 8ca00ce (Complete UI Redesign - 100% Implementation)
 import 'package:ebeere/ui/screens/battle/create_or_join_screen.dart';
 import 'package:ebeere/ui/screens/home/widgets/all.dart';
 import 'package:ebeere/ui/screens/profile/create_or_edit_profile_screen.dart';
@@ -967,14 +957,10 @@ class HomeScreenState extends State<HomeScreen>
   String _userScore = '0';
 
   Widget _buildHome() {
-<<<<<<< HEAD
-    return BlocConsumer<AppLocalizationCubit, AppLocalizationState>(
-=======
     return DecoratedBackground(
       shapesCount: 25,
       shapesSeed: 42,
       child: BlocConsumer<AppLocalizationCubit, AppLocalizationState>(
->>>>>>> 8ca00ce (Complete UI Redesign - 100% Implementation)
       listener: (context, state) async {
         _userName = context.tr('guest')!;
         if (_isGuest) return;
@@ -1049,10 +1035,7 @@ class HomeScreenState extends State<HomeScreen>
           ],
         );
       },
-<<<<<<< HEAD
-=======
       ),
->>>>>>> 8ca00ce (Complete UI Redesign - 100% Implementation)
     );
   }
 

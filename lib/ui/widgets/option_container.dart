@@ -137,37 +137,11 @@ class _OptionContainerState extends State<OptionContainer>
 
   Color get optionTextColor {
     final colorScheme = Theme.of(context).colorScheme;
-<<<<<<< HEAD
-
-    if (widget.answerMode == AnswerMode.noAnswerCorrectness) {
-      return isSubmittedAnswer ? colorScheme.surface : colorScheme.onTertiary;
-    }
-
-    if (widget.hasSubmittedAnswerForCurrentQuestion()) {
-      if (widget.answerMode ==
-              AnswerMode.showAnswerCorrectnessAndCorrectAnswer &&
-          (isCorrectAnswer || isSubmittedAnswer)) {
-        return colorScheme.surface;
-
-        /// for showAnswerCorrectness
-      } else if (isSubmittedAnswer) {
-        return colorScheme.surface;
-      }
-    }
-
-=======
     // Text always stays dark (readable on white background)
->>>>>>> 8ca00ce (Complete UI Redesign - 100% Implementation)
     return colorScheme.onTertiary;
   }
 
   Color _buildOptionBackgroundColor() {
-<<<<<<< HEAD
-    if (widget.answerMode == AnswerMode.noAnswerCorrectness) {
-      return isSubmittedAnswer
-          ? Theme.of(context).primaryColor
-          : Theme.of(context).colorScheme.surface;
-=======
     // Background always stays white/surface color
     return Theme.of(context).colorScheme.surface;
   }
@@ -178,7 +152,6 @@ class _OptionContainerState extends State<OptionContainer>
       return isSubmittedAnswer
           ? Theme.of(context).primaryColor
           : kAnswerBorderGray;
->>>>>>> 8ca00ce (Complete UI Redesign - 100% Implementation)
     }
 
     if (widget.hasSubmittedAnswerForCurrentQuestion()) {
@@ -188,29 +161,17 @@ class _OptionContainerState extends State<OptionContainer>
             ? kCorrectAnswerColor
             : isSubmittedAnswer
             ? kWrongAnswerColor
-<<<<<<< HEAD
-            : Theme.of(context).colorScheme.surface;
-=======
             : kAnswerBorderGray;
->>>>>>> 8ca00ce (Complete UI Redesign - 100% Implementation)
       } else {
         return isSubmittedAnswer
             ? isCorrectAnswer
                   ? kCorrectAnswerColor
                   : kWrongAnswerColor
-<<<<<<< HEAD
-            : Theme.of(context).colorScheme.surface;
-      }
-    }
-
-    return Theme.of(context).colorScheme.surface;
-=======
             : kAnswerBorderGray;
       }
     }
 
     return kAnswerBorderGray;
->>>>>>> 8ca00ce (Complete UI Redesign - 100% Implementation)
   }
 
   void _onTapOptionContainer() {
@@ -258,26 +219,6 @@ class _OptionContainerState extends State<OptionContainer>
             : widget.constraints.maxHeight * heightPercentage,
         width: optionWidth,
         alignment: Alignment.center,
-<<<<<<< HEAD
-        child: ClipRRect(
-          borderRadius: BorderRadius.circular(10),
-          child: Stack(
-            alignment: Alignment.center,
-            children: [
-              Container(
-                padding: EdgeInsets.symmetric(
-                  horizontal: 15,
-                  vertical: maxLines > 2 ? 7.50 : 0,
-                ),
-                color: _buildOptionBackgroundColor(),
-                alignment: AlignmentDirectional.centerStart,
-                child: Center(
-                  child: RichText(text: textSpan, textAlign: TextAlign.center),
-                ),
-              ),
-            ],
-          ),
-=======
         child: Container(
           decoration: BoxDecoration(
             color: _buildOptionBackgroundColor(),
@@ -303,7 +244,6 @@ class _OptionContainerState extends State<OptionContainer>
           ),
           alignment: Alignment.center,
           child: RichText(text: textSpan, textAlign: TextAlign.center),
->>>>>>> 8ca00ce (Complete UI Redesign - 100% Implementation)
         ),
       ),
     );

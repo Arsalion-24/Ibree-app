@@ -16,178 +16,10 @@ import 'package:ebeere/ui/widgets/error_container.dart';
 import 'package:ebeere/utils/datetime_utils.dart';
 import 'package:ebeere/utils/extensions.dart';
 import 'package:ebeere/utils/ui_utils.dart';
-<<<<<<< HEAD
-=======
-import 'package:ebeere/ui/design_system/decorated_background.dart';
->>>>>>> 8ca00ce (Complete UI Redesign - 100% Implementation)
-
-final class CoinHistoryScreen extends StatefulWidget {
-  const CoinHistoryScreen({super.key});
-
-  @override
-  State<CoinHistoryScreen> createState() => _CoinHistoryScreenState();
-
-  static Route<dynamic> route() {
-    return CupertinoPageRoute(
-      builder: (_) => BlocProvider<CoinHistoryCubit>(
-        create: (_) => CoinHistoryCubit(CoinHistoryRepository()),
-        child: const CoinHistoryScreen(),
-      ),
-    );
-  }
-}
-
-final class _CoinHistoryScreenState extends State<CoinHistoryScreen> {
-  late final ScrollController _scrollController;
-  late final CoinHistoryCubit _coinHistoryCubit;
-  late final UserDetailsCubit _userDetailsCubit;
-
-  @override
-  void initState() {
-    super.initState();
-    _scrollController = ScrollController()..addListener(_onScroll);
-    _coinHistoryCubit = context.read<CoinHistoryCubit>();
-    _userDetailsCubit = context.read<UserDetailsCubit>();
-    _fetchInitialHistory();
-  }
-
-  @override
-  void dispose() {
-    _scrollController
-      ..removeListener(_onScroll)
-      ..dispose();
-    super.dispose();
-  }
-
-  void _fetchInitialHistory() {
-    unawaited(_coinHistoryCubit.fetchInitialHistory());
-  }
-
-  void _onScroll() {
-    if (!_isScrolledToBottom) return;
-
-    if (_coinHistoryCubit.hasMoreHistory) {
-      unawaited(
-        _coinHistoryCubit.fetchMoreHistory(userId: _userDetailsCubit.userId()),
-      );
-    }
-  }
-
-  bool get _isScrolledToBottom =>
-      _scrollController.position.pixels >=
-      _scrollController.position.maxScrollExtent;
-
-  Widget _buildListItem({
-    required CoinHistory transaction,
-    required int index,
-    required int totalItems,
-    required bool hasMoreError,
-    required bool hasMore,
-  }) {
-    final isLastItem = index == totalItems - 1;
-
-    if (isLastItem && hasMore) {
-      return _buildLoadMoreIndicator(hasError: hasMoreError);
-    }
-
-    return _CoinHistoryItem(transaction: transaction);
-  }
-
-  Widget _buildLoadMoreIndicator({required bool hasError}) {
-    return Center(
-      child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 8),
-        child: hasError
-            ? IconButton(
-                onPressed: () => unawaited(
-                  _coinHistoryCubit.fetchMoreHistory(
-                    userId: _userDetailsCubit.userId(),
-                  ),
-                ),
-                icon: Icon(Icons.error, color: context.primaryColor),
-              )
-            : const CircularProgressContainer(),
-      ),
-    );
-  }
-
-  Widget _buildContent() {
-    return BlocConsumer<CoinHistoryCubit, CoinHistoryState>(
-      bloc: _coinHistoryCubit,
-      listenWhen: (previous, current) =>
-          current is CoinHistoryFetchFailure &&
-          current.errorMessage == errorCodeUnauthorizedAccess,
-      listener: _handleStateChanges,
-      buildWhen: (previous, current) =>
-          // Only rebuild when state type changes, not on pagination updates
-          previous.runtimeType != current.runtimeType ||
-          (current is CoinHistoryFetchSuccess &&
-              previous is CoinHistoryFetchSuccess &&
-              (current.coinHistory.length != previous.coinHistory.length ||
-                  current.hasMoreFetchError != previous.hasMoreFetchError)),
-      builder: (context, state) {
-        return switch (state) {
-          CoinHistoryFetchFailure() => _buildErrorState(state),
-          CoinHistoryFetchSuccess() => _buildHistoryList(state),
-          _ => const Center(child: CircularProgressContainer()),
-        };
-      },
-    );
-  }
-
-  void _handleStateChanges(BuildContext context, CoinHistoryState state) {
-    if (state is CoinHistoryFetchFailure &&
-        state.errorMessage == errorCodeUnauthorizedAccess) {
-      unawaited(showAlreadyLoggedInDialog(context));
-    }
-  }
-
-  Widget _buildErrorState(CoinHistoryFetchFailure state) {
-    return Center(
-      child: ErrorContainer(
-        errorMessageColor: context.primaryColor,
-        errorMessage: convertErrorCodeToLanguageKey(state.errorMessage),
-        onTapRetry: _fetchInitialHistory,
-        showErrorImage: true,
-      ),
-    );
-  }
-
-  Widget _buildHistoryList(CoinHistoryFetchSuccess state) {
-    return ListView.separated(
-      controller: _scrollController,
-      padding: EdgeInsets.symmetric(
-        vertical: context.height * UiUtils.vtMarginPct,
-        horizontal: context.width * UiUtils.hzMarginPct,
-      ),
-      itemCount: state.coinHistory.length,
-      separatorBuilder: (context, _) => const SizedBox(height: 12),
-      itemBuilder: (context, index) => _buildListItem(
-        transaction: state.coinHistory[index],
-        index: index,
-        totalItems: state.coinHistory.length,
-        hasMoreError: state.hasMoreFetchError,
-        hasMore: state.hasMore,
-      ),
-    );
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    final showBannerAd =
-        context.watch<BannerAdCubit>().bannerAdLoaded &&
-        !_userDetailsCubit.removeAds();
-
-    return Scaffold(
-      appBar: QAppBar(title: Text(context.tr(coinHistoryKey)!)),
-<<<<<<< HEAD
-      body: Stack(
-=======
       body: DecoratedBackground(
         shapesCount: 20,
         shapesSeed: 403,
         child: Stack(
->>>>>>> 8ca00ce (Complete UI Redesign - 100% Implementation)
         children: [
           Padding(
             padding: EdgeInsets.only(bottom: showBannerAd ? 60 : 0),
@@ -352,10 +184,7 @@ class _CoinBadge extends StatelessWidget {
           letterSpacing: 0.5,
         ),
       ),
-<<<<<<< HEAD
-=======
         ),
->>>>>>> 8ca00ce (Complete UI Redesign - 100% Implementation)
     );
   }
 }

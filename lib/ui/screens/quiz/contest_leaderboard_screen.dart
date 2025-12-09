@@ -12,85 +12,12 @@ import 'package:ebeere/ui/widgets/custom_appbar.dart';
 import 'package:ebeere/ui/widgets/error_container.dart';
 import 'package:ebeere/utils/extensions.dart';
 import 'package:ebeere/utils/ui_utils.dart';
-<<<<<<< HEAD
-=======
-import 'package:ebeere/ui/design_system/decorated_background.dart';
->>>>>>> 8ca00ce (Complete UI Redesign - 100% Implementation)
-
-class ContestLeaderBoardScreen extends StatefulWidget {
-  const ContestLeaderBoardScreen({super.key, this.contestId});
-
-  final String? contestId;
-
-  @override
-  State<ContestLeaderBoardScreen> createState() => _ContestLeaderBoardScreen();
-
-  static Route<dynamic> route(RouteSettings routeSettings) {
-    final arguments = routeSettings.arguments as Map?;
-    return CupertinoPageRoute(
-      builder: (_) => BlocProvider<GetContestLeaderboardCubit>(
-        create: (_) => GetContestLeaderboardCubit(QuizRepository()),
-        child: ContestLeaderBoardScreen(
-          contestId: arguments!['contestId'] as String?,
-        ),
-      ),
-    );
-  }
-}
-
-class _ContestLeaderBoardScreen extends State<ContestLeaderBoardScreen> {
-  final scrollController = ScrollController();
-
-  @override
-  void initState() {
-    super.initState();
-    scrollController.addListener(scrollListener);
-    getContestLeaderBoard();
-  }
-
-  @override
-  void dispose() {
-    scrollController
-      ..removeListener(scrollListener)
-      ..dispose();
-    super.dispose();
-  }
-
-  void scrollListener() {
-    if (scrollController.position.maxScrollExtent == scrollController.offset) {
-      if (context.read<GetContestLeaderboardCubit>().hasMoreData) {
-        context
-            .read<GetContestLeaderboardCubit>()
-            .getMoreContestLeaderboardData(widget.contestId!);
-      }
-    }
-  }
-
-  void getContestLeaderBoard() {
-    context.read<GetContestLeaderboardCubit>().getContestLeaderboard(
-      widget.contestId!,
-    );
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: QAppBar(
-        elevation: 0,
-        title: Text(context.tr('contestLeaderBoardLbl')!),
-      ),
-<<<<<<< HEAD
-      body: BlocBuilder<GetContestLeaderboardCubit, GetContestLeaderboardState>(
-        bloc: context.read<GetContestLeaderboardCubit>(),
-        builder: (context, state) {
-=======
       body: DecoratedBackground(
         shapesCount: 19,
         shapesSeed: 333,
         child: BlocBuilder<GetContestLeaderboardCubit, GetContestLeaderboardState>(
           bloc: context.read<GetContestLeaderboardCubit>(),
           builder: (context, state) {
->>>>>>> 8ca00ce (Complete UI Redesign - 100% Implementation)
           if (state is GetContestLeaderboardInitial ||
               state is GetContestLeaderboardProgress) {
             return const Center(child: CircularProgressContainer());
@@ -112,10 +39,7 @@ class _ContestLeaderBoardScreen extends State<ContestLeaderBoardScreen> {
             hasMore: successState.hasMore,
           );
         },
-<<<<<<< HEAD
-=======
         ),
->>>>>>> 8ca00ce (Complete UI Redesign - 100% Implementation)
       ),
     );
   }

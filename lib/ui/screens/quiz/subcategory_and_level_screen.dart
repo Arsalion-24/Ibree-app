@@ -27,70 +27,10 @@ import 'package:ebeere/ui/widgets/unlock_premium_category_dialog.dart';
 import 'package:ebeere/utils/extensions.dart';
 import 'package:ebeere/utils/ui_utils.dart';
 import 'package:google_fonts/google_fonts.dart';
-<<<<<<< HEAD
-=======
-import 'package:ebeere/ui/design_system/decorated_background.dart';
->>>>>>> 8ca00ce (Complete UI Redesign - 100% Implementation)
-
-final class SubCategoryAndLevelScreenArgs extends RouteArgs {
-  const SubCategoryAndLevelScreenArgs({
-    required this.quizType,
-    required this.category,
-    required this.categoryCubit,
-  });
-
-  final QuizTypes quizType;
-  final Category category;
-  final QuizCategoryCubit categoryCubit;
-}
-
-class SubCategoryAndLevelScreen extends StatefulWidget {
-  const SubCategoryAndLevelScreen({required this.args, super.key});
-
-  final SubCategoryAndLevelScreenArgs args;
-
-  static Route<SubCategoryAndLevelScreen> route(RouteSettings routeSettings) {
-    final args = routeSettings.args<SubCategoryAndLevelScreenArgs>();
-
-    return CupertinoPageRoute(
-      builder: (_) => SubCategoryAndLevelScreen(args: args),
-    );
-  }
-
-  @override
-  State<SubCategoryAndLevelScreen> createState() =>
-      _SubCategoryAndLevelScreen();
-}
-
-class _SubCategoryAndLevelScreen extends State<SubCategoryAndLevelScreen> {
-  @override
-  void initState() {
-    fetchSubCategory();
-    super.initState();
-  }
-
-  void fetchSubCategory() {
-    context.read<SubCategoryCubit>().fetchSubCategory(widget.args.category.id!);
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    final bannerAdLoaded =
-        context.watch<BannerAdCubit>().bannerAdLoaded &&
-        !context.read<UserDetailsCubit>().removeAds();
-    return Scaffold(
-      appBar: QAppBar(
-        title: Text(widget.args.category.categoryName!),
-        roundedAppBar: false,
-      ),
-<<<<<<< HEAD
-      body: Stack(
-=======
       body: DecoratedBackground(
         shapesCount: 20,
         shapesSeed: 210,
         child: Stack(
->>>>>>> 8ca00ce (Complete UI Redesign - 100% Implementation)
         children: [
           Padding(
             padding: EdgeInsets.only(bottom: bannerAdLoaded ? 60 : 0),
@@ -577,10 +517,7 @@ class _AnimatedSubcategoryContainerState
           _buildLevelSection(),
         ],
       ),
-<<<<<<< HEAD
-=======
         ),
->>>>>>> 8ca00ce (Complete UI Redesign - 100% Implementation)
     );
   }
 }

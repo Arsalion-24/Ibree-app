@@ -26,157 +26,18 @@ import 'package:lottie/lottie.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:screenshot/screenshot.dart';
 import 'package:share_plus/share_plus.dart';
-<<<<<<< HEAD
-=======
-import 'package:ebeere/ui/design_system/decorated_background.dart';
->>>>>>> 8ca00ce (Complete UI Redesign - 100% Implementation)
-
-final class MultiMatchResultScreenArgs extends RouteArgs {
-  const MultiMatchResultScreenArgs({
-    required this.questions,
-    required this.totalLevels,
-    required this.unlockedLevel,
-    required this.categoryId,
-    required this.timeTakenToCompleteQuiz,
-    required this.isPremiumCategory,
-    this.subcategoryId,
-  });
-
-  final List<MultiMatchQuestion> questions;
-  final int totalLevels;
-  final int unlockedLevel;
-  final String categoryId;
-  final String? subcategoryId;
-  final int timeTakenToCompleteQuiz;
-  final bool isPremiumCategory;
-}
-
-class MultiMatchResultScreen extends StatefulWidget {
-  const MultiMatchResultScreen({required this.args, super.key});
-
-  final MultiMatchResultScreenArgs args;
-
-  @override
-  State<MultiMatchResultScreen> createState() => _MultiMatchResultScreenState();
-
-  static Route<dynamic> route(RouteSettings settings) {
-    final args = settings.args<MultiMatchResultScreenArgs>();
-
-    return CupertinoPageRoute(
-      builder: (_) => MultiBlocProvider(
-        providers: [
-          // For Updating Result
-          BlocProvider(create: (_) => SetCoinScoreCubit()),
-          // For Deducting coins for Review Answers
-          BlocProvider<UpdateCoinsCubit>(
-            create: (_) => UpdateCoinsCubit(ProfileManagementRepository()),
-          ),
-        ],
-        child: MultiMatchResultScreen(args: args),
-      ),
-    );
-  }
-}
-
-class _MultiMatchResultScreenState extends State<MultiMatchResultScreen> {
-  final ScreenshotController screenshotController = ScreenshotController();
-
-  late final String userName = context.read<UserDetailsCubit>().getUserName();
-
-  bool _isWinner = false;
-  bool _isShareInProgress = false;
-  bool _isReviewInProgress = false;
-
-  late final int _currLevel = int.parse(widget.args.questions.first.level);
-
-  @override
-  void initState() {
-    super.initState();
-
-    /// show ad
-    Future.delayed(Duration.zero, () {
-      if (!widget.args.isPremiumCategory) {
-        context.read<InterstitialAdCubit>().showAd(context);
-      }
-    });
-
-    Future.delayed(Duration.zero, () async {
-      await _updateResult();
-      await _fetchUserDetails();
-    });
-  }
-
-  Future<void> _updateResult() async {
-    final type = QuizTypes.multiMatch.typeValue!;
-
-    final playedQuestions = widget.args.questions
-        .map(
-          (q) => <String, String>{
-            'id': q.id,
-            'answer': q.submittedIds.join(','),
-          },
-        )
-        .toList();
-
-    await context.read<SetCoinScoreCubit>().setCoinScore(
-      categoryId: widget.args.categoryId,
-      subcategoryId: widget.args.subcategoryId,
-      quizType: type,
-      playedQuestions: playedQuestions,
-    );
-  }
-
-  Future<void> _fetchUserDetails() async {
-    await context.read<UserDetailsCubit>().fetchUserDetails();
-  }
-
-  void _onBack() {
-    if (widget.args.subcategoryId == null) {
-      context.read<UnlockedLevelCubit>().fetchUnlockLevel(
-        widget.args.categoryId,
-        '',
-        quizType: QuizTypes.multiMatch,
-      );
-    } else {
-      context.read<SubCategoryCubit>().fetchSubCategory(widget.args.categoryId);
-    }
-    Navigator.pop(context);
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return PopScope(
-      canPop: false,
-      onPopInvokedWithResult: (didPop, _) {
-        if (didPop) return;
-        _onBack();
-      },
-      child: Scaffold(
-        appBar: QAppBar(
-          roundedAppBar: false,
-          title: Text(context.tr('multiMatchQuizResultLbl')!),
-          onTapBackButton: _onBack,
-        ),
-<<<<<<< HEAD
-        body: SingleChildScrollView(
-          child: Column(
-=======
         body: DecoratedBackground(
           shapesCount: 20,
           shapesSeed: 777,
           child: SingleChildScrollView(
             child: Column(
->>>>>>> 8ca00ce (Complete UI Redesign - 100% Implementation)
             children: [
               Center(child: _buildResultContainer(context)),
               const SizedBox(height: 20),
               _buildResultButtons(context),
             ],
           ),
-<<<<<<< HEAD
-=======
           ),
->>>>>>> 8ca00ce (Complete UI Redesign - 100% Implementation)
         ),
       ),
     );

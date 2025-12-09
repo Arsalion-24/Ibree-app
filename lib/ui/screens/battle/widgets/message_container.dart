@@ -1,15 +1,7 @@
-<<<<<<< HEAD
-import 'dart:ui' as ui;
-
-import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-=======
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:ebeere/core/config/colors.dart';
->>>>>>> 8ca00ce (Complete UI Redesign - 100% Implementation)
 import 'package:ebeere/core/constants/assets_constants.dart';
 import 'package:ebeere/features/battle_room/cubits/battle_room_cubit.dart';
 import 'package:ebeere/features/battle_room/cubits/message_cubit.dart';
@@ -18,14 +10,10 @@ import 'package:ebeere/features/battle_room/models/message.dart';
 import 'package:ebeere/features/profile_management/cubits/user_details_cubit.dart';
 import 'package:ebeere/features/quiz/models/quiz_type.dart';
 import 'package:ebeere/utils/extensions.dart';
-<<<<<<< HEAD
-
-=======
 import 'package:google_fonts/google_fonts.dart';
 
 /// Chat message bubble - redesigned as simple purple/gray pills
 /// Matches client UI specifications
->>>>>>> 8ca00ce (Complete UI Redesign - 100% Implementation)
 class MessageContainer extends StatelessWidget {
   const MessageContainer({
     required this.isCurrentUser,
@@ -40,10 +28,6 @@ class MessageContainer extends StatelessWidget {
 
   Widget _buildMessage(BuildContext context, MessageState messageState) {
     if (messageState is MessageFetchedSuccess) {
-<<<<<<< HEAD
-      //if no message has exchanged
-=======
->>>>>>> 8ca00ce (Complete UI Redesign - 100% Implementation)
       if (messageState.messages.isEmpty) {
         return const SizedBox();
       }
@@ -54,18 +38,10 @@ class MessageContainer extends StatelessWidget {
       if (quizType == QuizTypes.oneVsOneBattle) {
         final battleRoomCubit = context.read<BattleRoomCubit>();
         if (isCurrentUser) {
-<<<<<<< HEAD
-          //get current user's latest message
-=======
->>>>>>> 8ca00ce (Complete UI Redesign - 100% Implementation)
           message = context.read<MessageCubit>().getUserLatestMessage(
             battleRoomCubit.getCurrentUserDetails(currentUserId).uid,
           );
         } else {
-<<<<<<< HEAD
-          //get opponent user's latest message
-=======
->>>>>>> 8ca00ce (Complete UI Redesign - 100% Implementation)
           message = context.read<MessageCubit>().getUserLatestMessage(
             battleRoomCubit.getOpponentUserDetails(currentUserId).uid,
           );
@@ -73,18 +49,10 @@ class MessageContainer extends StatelessWidget {
       } else {
         final battleRoomCubit = context.read<MultiUserBattleRoomCubit>();
         if (isCurrentUser) {
-<<<<<<< HEAD
-          //get current user's latest message
-=======
->>>>>>> 8ca00ce (Complete UI Redesign - 100% Implementation)
           message = context.read<MessageCubit>().getUserLatestMessage(
             battleRoomCubit.getUser(currentUserId)!.uid,
           );
         } else {
-<<<<<<< HEAD
-          //get opponent user's latest message
-=======
->>>>>>> 8ca00ce (Complete UI Redesign - 100% Implementation)
           final opponentUserId = battleRoomCubit
               .getOpponentUsers(currentUserId)[opponentUserIndex!]!
               .uid;
@@ -95,19 +63,6 @@ class MessageContainer extends StatelessWidget {
       }
 
       return Padding(
-<<<<<<< HEAD
-        padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 8),
-        child: message.isTextMessage
-            ? Text(
-                message.message,
-                // textAlign: TextAlign.center,
-                maxLines: 2,
-                overflow: TextOverflow.ellipsis,
-                style: TextStyle(
-                  color: Theme.of(context).colorScheme.surface,
-                  fontSize: 13.5,
-                  height: 1,
-=======
         padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
         child: message.isTextMessage
             ? Text(
@@ -120,64 +75,17 @@ class MessageContainer extends StatelessWidget {
                   fontSize: 13,
                   fontWeight: FontWeight.w600,
                   height: 1.2,
->>>>>>> 8ca00ce (Complete UI Redesign - 100% Implementation)
                 ),
               )
             : SvgPicture.asset(
                 Assets.emoji(message.message),
-<<<<<<< HEAD
-                height: 25,
-=======
                 height: 24,
->>>>>>> 8ca00ce (Complete UI Redesign - 100% Implementation)
               ),
       );
     }
     return const SizedBox();
   }
 
-<<<<<<< HEAD
-  CustomPainter _buildGroupBattleCustomPainter(BuildContext context) {
-    if (isCurrentUser || opponentUserIndex == 0) {
-      return MessageCustomPainter(
-        triangleIsLeft: isCurrentUser,
-        firstGradientColor: Theme.of(context).primaryColor,
-        secondGradientColor: Theme.of(context).primaryColor,
-      );
-    }
-
-    return TopMessageCustomPainter(
-      triangleIsLeft: opponentUserIndex == 1,
-      firstGradientColor: Theme.of(context).primaryColor,
-      secondGradientColor: Theme.of(context).primaryColor,
-    );
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      constraints: BoxConstraints(
-        minWidth: context.width * 0.2,
-        maxWidth: context.width * 0.425,
-      ),
-      child: CustomPaint(
-        painter: quizType == QuizTypes.oneVsOneBattle
-            ? MessageCustomPainter(
-                triangleIsLeft: isCurrentUser,
-                firstGradientColor: Theme.of(context).primaryColor,
-                secondGradientColor: Theme.of(context).primaryColor,
-              )
-            : _buildGroupBattleCustomPainter(context),
-        child: BlocBuilder<MessageCubit, MessageState>(
-          bloc: context.read<MessageCubit>(),
-          builder: (context, state) {
-            return AnimatedSwitcher(
-              duration: const Duration(milliseconds: 175),
-              child: _buildMessage(context, state),
-            );
-          },
-        ),
-=======
   @override
   Widget build(BuildContext context) {
     // Purple pill for opponent, gray pill for current user
@@ -209,143 +117,7 @@ class MessageContainer extends StatelessWidget {
             child: _buildMessage(context, state),
           );
         },
->>>>>>> 8ca00ce (Complete UI Redesign - 100% Implementation)
       ),
     );
   }
 }
-<<<<<<< HEAD
-
-class TopMessageCustomPainter extends CustomPainter {
-  TopMessageCustomPainter({
-    required this.triangleIsLeft,
-    required this.firstGradientColor,
-    required this.secondGradientColor,
-  });
-
-  final bool triangleIsLeft;
-  final Color firstGradientColor;
-
-  final Color secondGradientColor;
-
-  @override
-  void paint(Canvas canvas, Size size) {
-    final path = Path();
-
-    final paint = Paint()
-      ..shader = ui.Gradient.linear(
-        Offset(size.width * 0.5, 0),
-        Offset(size.width * 0.5, size.height),
-        [firstGradientColor, secondGradientColor],
-      )
-      ..style = PaintingStyle.fill;
-
-    path
-      ..moveTo(size.width * 0.1, 0)
-      ..lineTo(size.width * (triangleIsLeft ? 0.25 : 0.75), 0)
-      ..lineTo(
-        size.width * (triangleIsLeft ? 0.2 : 0.8),
-        size.height - size.height * 1.3,
-      )
-      ..lineTo(size.width * (triangleIsLeft ? 0.15 : 0.85), 0) //85,15
-      //
-      ..lineTo(size.width * 0.9, 0)
-      //add curve effect
-      ..quadraticBezierTo(size.width, 0, size.width, size.height * 0.2)
-      ..lineTo(size.width, size.height * 0.8)
-      //add curve
-      ..quadraticBezierTo(
-        size.width,
-        size.height,
-        size.width * 0.9,
-        size.height,
-      )
-      ..lineTo(size.width * 0.1, size.height)
-      //add curve
-      ..quadraticBezierTo(0, size.height, 0, size.height * 0.8)
-      ..lineTo(0, size.height * 0.2)
-      //add curve
-      ..quadraticBezierTo(0, 0, size.width * 0.1, 0);
-    canvas
-      ..drawShadow(
-        path.shift(const Offset(2, 2)),
-        Colors.grey.withValues(alpha: 0.3),
-        3,
-        true,
-      )
-      ..drawPath(path, paint);
-  }
-
-  @override
-  bool shouldRepaint(covariant CustomPainter oldDelegate) {
-    return true;
-  }
-}
-
-class MessageCustomPainter extends CustomPainter {
-  MessageCustomPainter({
-    required this.triangleIsLeft,
-    required this.firstGradientColor,
-    required this.secondGradientColor,
-  });
-
-  final bool triangleIsLeft;
-  final Color firstGradientColor;
-
-  final Color secondGradientColor;
-
-  @override
-  void paint(Canvas canvas, Size size) {
-    final path = Path();
-
-    final paint = Paint()
-      ..shader = ui.Gradient.linear(
-        Offset(size.width * 0.5, 0),
-        Offset(size.width * 0.5, size.height),
-        [firstGradientColor, secondGradientColor],
-      )
-      ..style = PaintingStyle.fill;
-
-    path
-      ..moveTo(size.width * 0.1, 0)
-      ..lineTo(size.width * 0.9, 0)
-      //add curve effect
-      ..quadraticBezierTo(size.width, 0, size.width, size.height * 0.2)
-      ..lineTo(size.width, size.height * 0.8)
-      //add curve
-      ..quadraticBezierTo(
-        size.width,
-        size.height,
-        size.width * 0.9,
-        size.height,
-      )
-      //add triangle here
-      ..lineTo(size.width * (triangleIsLeft ? 0.25 : 0.75), size.height)
-      //to add how long triangle will go down
-      ..lineTo(size.width * (triangleIsLeft ? 0.2 : 0.8), size.height * 1.3)
-      //
-      ..lineTo(size.width * (triangleIsLeft ? 0.15 : 0.85), size.height)
-      //
-      ..lineTo(size.width * 0.1, size.height)
-      //add curve
-      ..quadraticBezierTo(0, size.height, 0, size.height * 0.8)
-      ..lineTo(0, size.height * 0.2)
-      //add curve
-      ..quadraticBezierTo(0, 0, size.width * 0.1, 0);
-    canvas
-      ..drawShadow(
-        path.shift(const Offset(2, 2)),
-        Colors.grey.withValues(alpha: 0.3),
-        3,
-        true,
-      )
-      ..drawPath(path, paint);
-  }
-
-  @override
-  bool shouldRepaint(covariant CustomPainter oldDelegate) {
-    return true;
-  }
-}
-=======
->>>>>>> 8ca00ce (Complete UI Redesign - 100% Implementation)

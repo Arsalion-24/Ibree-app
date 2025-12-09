@@ -17,104 +17,12 @@ import 'package:ebeere/ui/widgets/custom_back_button.dart';
 import 'package:ebeere/ui/widgets/error_container.dart';
 import 'package:ebeere/utils/extensions.dart';
 import 'package:ebeere/utils/ui_utils.dart';
-<<<<<<< HEAD
-=======
-import 'package:ebeere/ui/design_system/decorated_background.dart';
->>>>>>> 8ca00ce (Complete UI Redesign - 100% Implementation)
-
-/// Contest Type
-const int _past = 0;
-const int _live = 1;
-const int _upcoming = 2;
-
-class ContestScreen extends StatefulWidget {
-  const ContestScreen({super.key});
-
-  @override
-  State<ContestScreen> createState() => _ContestScreen();
-
-  static Route<dynamic> route(RouteSettings routeSettings) {
-    return CupertinoPageRoute(
-      builder: (_) => MultiBlocProvider(
-        providers: [
-          BlocProvider<ContestCubit>(
-            create: (_) => ContestCubit(QuizRepository()),
-          ),
-          BlocProvider<UpdateCoinsCubit>(
-            create: (_) => UpdateCoinsCubit(ProfileManagementRepository()),
-          ),
-        ],
-        child: const ContestScreen(),
-      ),
-    );
-  }
-}
-
-class _ContestScreen extends State<ContestScreen>
-    with SingleTickerProviderStateMixin {
-  @override
-  void initState() {
-    super.initState();
-    context.read<ContestCubit>().getContest(
-      languageId: UiUtils.getCurrentQuizLanguageId(context),
-    );
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return DefaultTabController(
-      length: 3,
-      initialIndex: 1,
-      child: Builder(
-        builder: (BuildContext context) {
-          return Scaffold(
-            appBar: AppBar(
-              elevation: 0,
-              backgroundColor: Theme.of(context).scaffoldBackgroundColor,
-              title: Text(
-                context.tr('contestLbl')!,
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 18,
-                  color: Theme.of(context).colorScheme.onTertiary,
-                ),
-              ),
-              leading: const CustomBackButton(),
-              centerTitle: true,
-              bottom: PreferredSize(
-                preferredSize: const Size.fromHeight(50),
-                child: Container(
-                  margin: const EdgeInsets.symmetric(horizontal: 16),
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(25),
-                    color: Theme.of(
-                      context,
-                    ).colorScheme.onTertiary.withValues(alpha: 0.08),
-                  ),
-                  child: TabBar(
-                    tabAlignment: TabAlignment.fill,
-                    tabs: [
-                      Tab(text: context.tr('pastLbl')),
-                      Tab(text: context.tr('liveLbl')),
-                      Tab(text: context.tr('upcomingLbl')),
-                    ],
-                  ),
-                ),
-              ),
-            ),
-<<<<<<< HEAD
-            body: BlocConsumer<ContestCubit, ContestState>(
-              bloc: context.read<ContestCubit>(),
-              listener: (context, state) {
-=======
             body: DecoratedBackground(
               shapesCount: 20,
               shapesSeed: 444,
               child: BlocConsumer<ContestCubit, ContestState>(
                 bloc: context.read<ContestCubit>(),
                 listener: (context, state) {
->>>>>>> 8ca00ce (Complete UI Redesign - 100% Implementation)
                 if (state is ContestFailure) {
                   if (state.errorMessage == errorCodeUnauthorizedAccess) {
                     showAlreadyLoggedInDialog(context);
@@ -147,10 +55,7 @@ class _ContestScreen extends State<ContestScreen>
                   ],
                 );
               },
-<<<<<<< HEAD
-=======
               ),
->>>>>>> 8ca00ce (Complete UI Redesign - 100% Implementation)
             ),
           );
         },

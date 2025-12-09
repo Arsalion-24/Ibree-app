@@ -18,127 +18,10 @@ import 'package:ebeere/utils/extensions.dart';
 import 'package:ebeere/utils/ui_utils.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
-<<<<<<< HEAD
-=======
-import 'package:ebeere/ui/design_system/decorated_background.dart';
->>>>>>> 8ca00ce (Complete UI Redesign - 100% Implementation)
-
-const int otpTimeOutSeconds = 60;
-
-class OtpScreen extends StatefulWidget {
-  const OtpScreen({super.key});
-
-  @override
-  State<OtpScreen> createState() => _OtpScreen();
-
-  static Route<dynamic> route() {
-    return CupertinoPageRoute(
-      builder: (_) => BlocProvider<SignInCubit>(
-        child: const OtpScreen(),
-        create: (_) => SignInCubit(AuthRepository()),
-      ),
-    );
-  }
-}
-
-class _OtpScreen extends State<OtpScreen> {
-  TextEditingController phoneNumberController = TextEditingController();
-
-  CountryCode? selectedCountryCode;
-  final smsCodeController = TextEditingController();
-
-  final resendOtpTimerContainerKey = GlobalKey<ResendOtpTimerContainerState>();
-
-  bool codeSent = false;
-  bool hasError = false;
-  String errorMessage = '';
-  bool isLoading = false;
-  String userVerificationId = '';
-
-  bool enableResendOtpButton = false;
-
-  Future<void> signInWithPhoneNumber({required String phoneNumber}) async {
-    await FirebaseAuth.instance.verifyPhoneNumber(
-      timeout: const Duration(seconds: otpTimeOutSeconds),
-      phoneNumber: '${selectedCountryCode!.dialCode} $phoneNumber',
-      verificationCompleted: (PhoneAuthCredential credential) {},
-      verificationFailed: (FirebaseAuthException e) {
-        //if otp code does not verify
-
-        context.showSnack(
-          context.tr(
-            convertErrorCodeToLanguageKey(
-              e.code == 'invalid-phone-number'
-                  ? errorCodeInvalidPhoneNumber
-                  : errorCodeDefaultMessage,
-            ),
-          )!,
-        );
-
-        setState(() {
-          isLoading = false;
-        });
-      },
-      codeSent: (String verificationId, int? resendToken) {
-        setState(() {
-          codeSent = true;
-          userVerificationId = verificationId;
-          isLoading = false;
-        });
-
-        Future<void>.delayed(const Duration(milliseconds: 75)).then((value) {
-          resendOtpTimerContainerKey.currentState?.setResendOtpTimer();
-        });
-      },
-      codeAutoRetrievalTimeout: (String verificationId) {},
-    );
-  }
-
-  Widget _buildOTPSentToPhoneNumber() {
-    if (codeSent) {
-      return Column(
-        children: [
-          Text(
-            context.tr(otpSendLbl)!,
-            textAlign: TextAlign.center,
-            style: TextStyle(
-              color: Theme.of(
-                context,
-              ).colorScheme.onTertiary.withValues(alpha: 0.6),
-              fontSize: 16,
-            ),
-          ),
-          Text(
-            '${selectedCountryCode!.dialCode} ${phoneNumberController.text.trim()}',
-            textAlign: TextAlign.center,
-            style: TextStyle(
-              color: Theme.of(context).colorScheme.onTertiary,
-              fontSize: 16,
-            ),
-          ),
-        ],
-      );
-    }
-
-    return const SizedBox();
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    final size = context;
-
-    return PopScope(
-      canPop:
-          context.read<SignInCubit>().state is! SignInProgress && !isLoading,
-      child: Scaffold(
-<<<<<<< HEAD
-        body: Stack(
-=======
         body: DecoratedBackground(
         shapesCount: 20,
         shapesSeed: 600,
         child: Stack(
->>>>>>> 8ca00ce (Complete UI Redesign - 100% Implementation)
           children: [
             SingleChildScrollView(
               padding: EdgeInsets.symmetric(
@@ -520,9 +403,6 @@ class _OtpScreen extends State<OtpScreen> {
         ),
       ],
     );
-<<<<<<< HEAD
-=======
         ),
->>>>>>> 8ca00ce (Complete UI Redesign - 100% Implementation)
   }
 }

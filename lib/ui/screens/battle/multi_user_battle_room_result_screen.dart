@@ -15,108 +15,10 @@ import 'package:ebeere/ui/widgets/custom_rounded_button.dart';
 import 'package:ebeere/ui/widgets/error_container.dart';
 import 'package:ebeere/utils/extensions.dart';
 import 'package:ebeere/utils/ui_utils.dart';
-<<<<<<< HEAD
-=======
-import 'package:ebeere/ui/design_system/decorated_background.dart';
->>>>>>> 8ca00ce (Complete UI Redesign - 100% Implementation)
-
-final class MultiUserBattleRoomResultArgs extends RouteArgs {
-  MultiUserBattleRoomResultArgs({required this.joinedUsersCount});
-
-  final int joinedUsersCount;
-}
-
-class MultiUserBattleRoomResultScreen extends StatefulWidget {
-  const MultiUserBattleRoomResultScreen({
-    required this.args,
-    super.key,
-  });
-
-  final MultiUserBattleRoomResultArgs args;
-
-  @override
-  State<MultiUserBattleRoomResultScreen> createState() =>
-      _MultiUserBattleRoomResultScreenState();
-
-  static Route<dynamic> route(RouteSettings routeSettings) {
-    final args = routeSettings.args<MultiUserBattleRoomResultArgs>();
-
-    return CupertinoPageRoute(
-      builder: (_) => BlocProvider(
-        create: (_) => SetCoinScoreCubit(),
-        child: MultiUserBattleRoomResultScreen(args: args),
-      ),
-    );
-  }
-}
-
-class _MultiUserBattleRoomResultScreenState
-    extends State<MultiUserBattleRoomResultScreen> {
-  List<Map<String, dynamic>> usersWithRank = [];
-
-  late final BattleRoom battleRoom = context
-      .read<MultiUserBattleRoomCubit>()
-      .battleRoom!;
-  late final int totalQuestions = context
-      .read<MultiUserBattleRoomCubit>()
-      .getQuestions()
-      .length;
-
-  @override
-  void initState() {
-    super.initState();
-    Future.delayed(Duration.zero, () {
-      context.read<InterstitialAdCubit>().showAd(context);
-    });
-    _updateResult();
-  }
-
-  Future<void> _updateResult() async {
-    await context.read<SetCoinScoreCubit>().setCoinScore(
-      quizType: '1.5', // quiz type is 1.5 for group battle
-      playedQuestions: {
-        'user1_id': ?battleRoom.user1!.uid.isEmpty
-            ? '0'
-            : battleRoom.user1?.uid,
-        'user2_id': ?battleRoom.user2!.uid.isEmpty
-            ? '0'
-            : battleRoom.user2?.uid,
-        'user3_id': ?battleRoom.user3!.uid.isEmpty
-            ? '0'
-            : battleRoom.user3?.uid,
-        'user4_id': battleRoom.user4!.uid.isEmpty ? '0' : battleRoom.user4?.uid,
-        'user1_data': ?battleRoom.user1?.answers,
-        'user2_data': ?battleRoom.user2?.answers,
-        'user3_data': ?battleRoom.user3?.answers,
-        'user4_data': ?battleRoom.user4?.answers,
-      },
-      joinedUsersCount: widget.args.joinedUsersCount,
-      matchId: battleRoom.roomCode,
-    );
-  }
-
-  final _rankImages = <String>[
-    Assets.rank1,
-    Assets.rank2,
-    Assets.rank3,
-    Assets.rank4,
-  ];
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: QAppBar(
-        roundedAppBar: false,
-        title: Text(context.tr('groupBattleResult')!),
-      ),
-<<<<<<< HEAD
-      body: Stack(
-=======
       body: DecoratedBackground(
         shapesCount: 20,
         shapesSeed: 102,
         child: Stack(
->>>>>>> 8ca00ce (Complete UI Redesign - 100% Implementation)
         children: [
           Align(
             alignment: Alignment.topCenter,
@@ -402,10 +304,7 @@ class _MultiUserBattleRoomResultScreenState
           ),
         ],
       ),
-<<<<<<< HEAD
-=======
         ),
->>>>>>> 8ca00ce (Complete UI Redesign - 100% Implementation)
     );
   }
 }

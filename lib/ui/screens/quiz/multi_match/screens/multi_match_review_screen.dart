@@ -16,72 +16,6 @@ import 'package:ebeere/ui/widgets/custom_appbar.dart';
 import 'package:ebeere/utils/answer_encryption.dart';
 import 'package:ebeere/utils/extensions.dart';
 import 'package:ebeere/utils/ui_utils.dart';
-<<<<<<< HEAD
-=======
-import 'package:ebeere/ui/design_system/decorated_background.dart';
->>>>>>> 8ca00ce (Complete UI Redesign - 100% Implementation)
-
-final class MultiMatchReviewScreenArgs extends RouteArgs {
-  const MultiMatchReviewScreenArgs({required this.questions});
-
-  final List<MultiMatchQuestion> questions;
-}
-
-class MultiMatchReviewScreen extends StatefulWidget {
-  const MultiMatchReviewScreen({required this.args, super.key});
-
-  final MultiMatchReviewScreenArgs args;
-
-  @override
-  State<MultiMatchReviewScreen> createState() => _MultiMatchReviewScreenState();
-
-  static Route<dynamic> route(RouteSettings routeSettings) {
-    final args = routeSettings.args<MultiMatchReviewScreenArgs>();
-
-    return CupertinoPageRoute(
-      builder: (_) => BlocProvider<ReportQuestionCubit>(
-        create: (_) => ReportQuestionCubit(ReportQuestionRepository()),
-        child: MultiMatchReviewScreen(args: args),
-      ),
-    );
-  }
-}
-
-class _MultiMatchReviewScreenState extends State<MultiMatchReviewScreen> {
-  late final _pageController = PageController();
-  int _currQueIdx = 0;
-
-  late final String _firebaseId = context
-      .read<UserDetailsCubit>()
-      .getUserFirebaseId();
-
-  late final List<List<String>> _correctAnswerIds = List.generate(
-    widget.args.questions.length,
-    (i) => AnswerEncryption.decryptCorrectAnswers(
-      rawKey: _firebaseId,
-      correctAnswer: widget.args.questions[i].correctAnswer,
-    ),
-    growable: false,
-  );
-
-  void _onPageChanged(int idx) {
-    setState(() => _currQueIdx = idx);
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: QAppBar(
-        title: Text(context.tr('reviewAnswers')!),
-        actions: [_buildReportButton()],
-      ),
-<<<<<<< HEAD
-      body: Stack(
-        children: [
-          Align(alignment: Alignment.topCenter, child: _buildQuestions()),
-          Align(alignment: Alignment.bottomCenter, child: _buildBottomMenu()),
-        ],
-=======
       body: DecoratedBackground(
         shapesCount: 21,
         shapesSeed: 888,
@@ -91,7 +25,6 @@ class _MultiMatchReviewScreenState extends State<MultiMatchReviewScreen> {
             Align(alignment: Alignment.bottomCenter, child: _buildBottomMenu()),
           ],
         ),
->>>>>>> 8ca00ce (Complete UI Redesign - 100% Implementation)
       ),
     );
   }
