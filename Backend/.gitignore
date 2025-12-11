@@ -1,0 +1,159 @@
+# ébeere Games Admin Panel - Git Ignore
+
+# CodeIgniter Specific
+*/config/development
+*/logs/log-*.php
+*/logs/!index.html
+*/cache/*
+*/cache/!index.html
+*/cache/!.htaccess
+
+# Application Specific Directories
+application/cache/*
+!application/cache/index.html
+!application/cache/.htaccess
+
+application/logs/*
+!application/logs/index.html
+!application/logs/.htaccess
+
+# Uploaded Images & Media (large files)
+images/questions/*
+images/categories/*
+images/sliders/*
+images/profiles/*
+images/badges/*
+!images/**/index.html
+!images/branding/
+
+# Keep these sample/default images
+!images/web-settings/background-image-stock.png
+!images/branding/*
+
+# Database Configuration (SECURITY)
+application/config/database.php
+application/config/config.php
+
+# Create templates instead
+!application/config/database.php.template
+!application/config/config.php.template
+
+# Backups
+*.sql
+*.sql.gz
+*.sql.zip
+backups/
+database/backups/
+
+# OS Generated Files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+*~
+
+# IDE & Editor Files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+.project
+.settings/
+*.swp
+*.swo
+*.swn
+.buildpath
+
+# Temporary Files
+*.tmp
+*.temp
+*.log
+*.cache
+
+# Composer (if using)
+vendor/
+composer.lock
+composer.phar
+
+# Node Modules (if using)
+node_modules/
+npm-debug.log
+yarn-error.log
+package-lock.json
+
+# PHP Specific
+.phpunit.result.cache
+.php_cs.cache
+
+# Environment Files (contains secrets)
+.env
+.env.local
+.env.*.local
+
+# Update Scripts (keep in separate location)
+update-scripts/
+*.zip
+
+# Sensitive Information
+google-services.json
+firebase-adminsdk-*.json
+*.pem
+*.key
+*.crt
+
+# Large Files
+*.mp4
+*.avi
+*.mov
+*.wmv
+*.flv
+*.mp3
+*.wav
+
+# Compressed Files (except essential)
+*.tar
+*.tar.gz
+*.rar
+# Allow zip files for imports
+# *.zip
+
+# Documentation (if generated)
+docs/build/
+documentation/build/
+
+# Testing
+tests/reports/
+coverage/
+phpunit.xml
+.phpunit.result.cache
+
+# Deployment
+deploy.sh
+deploy.php
+capistrano/
+.capistrano/
+
+# Windows
+desktop.ini
+
+# Linux
+*~
+.directory
+
+# Mac
+Icon
+
+# Archives
+archives/
+old/
+deprecated/
+
+# Exceptions - Always Include These
+!.gitignore
+!.htaccess
+!.gitkeep
+!index.html
+!index.php

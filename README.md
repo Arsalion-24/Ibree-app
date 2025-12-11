@@ -1,6 +1,6 @@
-# ébeere Games
+# ébeere Games - Complete Platform
 
-A comprehensive quiz and mini-games mobile application built with Flutter.
+A comprehensive quiz and mini-games platform with mobile application (Flutter) and admin panel (PHP/CodeIgniter).
 
 ## Overview
 
@@ -47,12 +47,23 @@ A comprehensive quiz and mini-games mobile application built with Flutter.
 
 ## Tech Stack
 
+### Mobile App
 - **Framework**: Flutter 3.10.0+
 - **State Management**: flutter_bloc
-- **Backend**: Firebase (Auth, Firestore, Messaging)
+- **Backend Integration**: REST API + Firebase
 - **Payment**: In-app Purchase, Moneroo Integration
 - **Ads**: Google Mobile Ads, Unity Ads, IronSource
 - **UI**: Material Design 3
+- **Theme**: Purple-teal gradient
+
+### Backend (Admin Panel)
+- **Framework**: CodeIgniter 3.x
+- **Language**: PHP 7.4+
+- **Database**: MySQL 5.7+ / MariaDB 10.2+
+- **Template**: Stisla Admin (customized)
+- **UI**: Bootstrap 4, Custom ébeere Theme
+- **Theme**: Purple-teal gradient (matches mobile app)
+- **Features**: Quiz management, User management, API, Analytics
 
 ## Getting Started
 
@@ -98,10 +109,13 @@ flutter build appbundle --release
 flutter build ios --release
 ```
 
-## Project Structure
+## Repository Structure
 
+This is a monorepo containing both the mobile app and backend admin panel:
+
+### Mobile App (Flutter)
 ```
-lib/
+lib/                  # Flutter source code
 ├── app/              # App initialization
 ├── commons/          # Common widgets and screens
 ├── core/             # Core utilities, constants, themes
@@ -114,7 +128,31 @@ lib/
 │   └── ...
 ├── ui/               # UI screens and widgets
 └── utils/            # Utility functions
+
+assets/               # App assets (images, animations, sounds)
+android/              # Android project configuration
+ios/                  # iOS project configuration
+pubspec.yaml          # Flutter dependencies
 ```
+
+### Backend (PHP/CodeIgniter)
+```
+Backend/              # Admin panel & API
+├── application/      # CodeIgniter application
+│   ├── controllers/  # API, Dashboard, Management
+│   ├── models/       # Database models
+│   ├── views/        # Admin panel UI
+│   └── config/       # Configuration templates
+├── assets/           # CSS, JS, libraries
+│   └── css/ibeere-theme.css  # Custom purple-teal theme
+├── images/           # Media files
+├── system/           # CodeIgniter core
+├── README.md         # Backend documentation
+├── SETUP_GUIDE.md    # Installation guide
+└── api-docs.txt      # API reference
+```
+
+See **Backend/README.md** for admin panel documentation.
 
 ## Configuration
 
